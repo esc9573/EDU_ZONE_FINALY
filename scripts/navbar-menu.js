@@ -1,6 +1,4 @@
 
-        // scripts/navbar-menu.js
-
         document.addEventListener("DOMContentLoaded", () => {
             const menuIcon = document.querySelector('.menu-icon');
             const navbarMenu = document.querySelector('.navbar-menu');
@@ -29,5 +27,37 @@
                 if (!navbarMenu.contains(e.target) && !menuIcon.contains(e.target)) {
                     navbarMenu.classList.remove('active');
                 }
+            });
+        });
+
+        // scripts/footer-toggle.js
+
+        document.addEventListener("DOMContentLoaded", function() {
+            const buttons = document.querySelectorAll(".footer .footer-btn");
+
+            buttons.forEach(function(btn) {
+                btn.addEventListener("click", function() {
+                    const list = btn.nextElementSibling; // الـ ol اللي تحت العنوان
+                    const icon = btn.querySelector("i");
+
+                    // لو القائمة مفتوحة، اقفلها
+                    if (list.style.display === "block") {
+                        list.style.display = "none";
+                        icon.classList.remove("fa-rotate-180");
+                    } else {
+                        // اقفل كل القوائم أولاً
+                        document.querySelectorAll(".footer .item ol").forEach(function(otherList) {
+                            otherList.style.display = "none";
+                        });
+
+                        document.querySelectorAll(".footer .footer-btn i").forEach(function(otherIcon) {
+                            otherIcon.classList.remove("fa-rotate-180");
+                        });
+
+                        // افتح القائمة الحالية
+                        list.style.display = "block";
+                        icon.classList.add("fa-rotate-180");
+                    }
+                });
             });
         });
