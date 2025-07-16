@@ -1,0 +1,491 @@
+/* ===== Global CSS Variables ===== */
+:root {
+    --primary-color: #0559CF;
+    --primary-light: #A8CCFF;
+    --primary-dark: #084aa7;
+    --secondary-color: #0B81CA;
+    --text-color: #333;
+    --text-light: #666;
+    --text-lighter: #999;
+    --light-bg: #f0f8ff;
+    --white: #fff;
+    --border-color: #ddd;
+
+    --shadow-light: 0 3px 10px rgba(0, 0, 0, 0.1);
+    --shadow-medium: 0 5px 15px rgba(0, 0, 0, 0.15);
+    --shadow-dark: 0 0 30px rgba(0, 0, 0, 0.2);
+    
+    --transition-fast: all 0.3s ease;
+    --transition-medium: all 0.4s ease;
+    --transition-slow: all 0.5s ease;
+
+    --border-radius-sm: 5px;
+    --border-radius-md: 10px;
+    --border-radius-lg: 15px;
+    --border-radius-xl: 20px;
+    --border-radius-special: 35px 20px;
+    --border-radius-circle: 50%;
+}
+
+/* ===== Main Footer Styles ===== */
+footer {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    background-color: var(--light-bg);
+    gap: 40px;
+    padding: 40px 60px;
+    border-bottom: 2px solid var(--border-color);
+    flex-wrap: wrap;
+}
+
+footer img {
+    width: 200px;
+    cursor: pointer;
+    transition: var(--transition-fast);
+}
+
+footer img:hover {
+    transform: scale(1.05);
+}
+
+footer .item {
+    transition: var(--transition-fast);
+    flex: 1;
+    min-width: 200px;
+}
+
+footer .item:first-child {
+    flex: 2;
+    min-width: 300px;
+}
+
+footer .item:hover {
+    transform: translateY(-5px);
+}
+
+footer .item p {
+    line-height: 1.6;
+    color: var(--text-light);
+    margin-bottom: 20px;
+    font-size: 14px;
+}
+
+footer .item a {
+    margin-bottom: 20px;
+    color: var(--text-color);
+    text-decoration: none;
+}
+
+footer .item h3 {
+    color: var(--primary-color);
+    position: relative;
+    display: inline-block;
+    margin-bottom: 20px;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+footer .item h3::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 50%;
+    height: 2px;
+    background-color: var(--primary-color);
+    transition: var(--transition-fast);
+}
+
+footer .item h3:hover::after {
+    width: 100%;
+}
+
+/* Social Media Icons Styling */
+.social-icons {
+    display: flex;
+    gap: 15px;
+    list-style: none;
+    padding: 0;
+    flex-wrap: wrap;
+}
+
+.social-icons li {
+    margin: 0;
+}
+
+.social-icons a {
+    display: inline-block;
+    margin-bottom: 0 !important;
+}
+
+footer .item .social-icons i,
+.footer .info .social-icons i {
+    font-size: 22px;
+    cursor: pointer;
+    transition: var(--transition-fast);
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--white);
+    border-radius: var(--border-radius-circle);
+    box-shadow: var(--shadow-light);
+    color: var(--primary-color);
+}
+
+footer .item .social-icons i:hover,
+.footer .info .social-icons i:hover {
+    color: var(--white);
+    background-color: var(--primary-color);
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-medium);
+}
+
+/* Links List Styling */
+footer .item ol {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+footer .item ol a {
+    position: relative;
+    padding-right: 15px;
+    transition: var(--transition-fast);
+    display: block;
+    font-weight: 500;
+    padding: 8px 0;
+    color: var(--text-color);
+}
+
+footer .item ol a::before {
+    content: '→';
+    position: absolute;
+    right: 0;
+    opacity: 0;
+    transition: var(--transition-fast);
+}
+
+footer .item ol a:hover {
+    color: var(--primary-color);
+    padding-right: 20px;
+}
+
+footer .item ol a:hover::before {
+    opacity: 1;
+}
+
+/* Contact Section Styling */
+footer .item:last-child a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: var(--transition-fast);
+}
+
+footer .item:last-child a:hover {
+    color: var(--primary-color);
+    transform: translateX(5px);
+}
+
+footer .item:last-child i {
+    color: var(--primary-color);
+    margin-right: 8px;
+}
+
+footer .info:last-child {
+    display: flex;
+    gap: 20px;
+}
+
+footer a:hover {
+    color: var(--primary-color);
+}
+
+/* Copyright Section Styling */
+.copyright {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 60px;
+    background-color: var(--light-bg);
+    border-top: 1px solid var(--border-color);
+}
+
+.copyright .info {
+    display: flex;
+    gap: 20px;
+}
+
+.copyright .info a {
+    color: var(--text-color);
+    transition: var(--transition-fast);
+}
+
+.copyright .info a:hover {
+    color: var(--primary-color);
+}
+
+/* ===== Mobile Footer Styles ===== */
+.footer {
+    background-color: var(--light-bg);
+    padding: 25px 20px;
+    flex-direction: column;
+    gap: 15px;
+    display: none;
+}
+
+.footer .item {
+    background-color: var(--white);
+    padding: 15px;
+    border-radius: var(--border-radius-md);
+    box-shadow: var(--shadow-light);
+    transition: var(--transition-fast);
+}
+
+.footer .item:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-medium);
+}
+
+.footer h3 {
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--primary-color);
+    font-weight: 600;
+    margin: 0;
+}
+
+.footer h3 i {
+    font-size: 15px;
+    transition: var(--transition-fast);
+}
+
+.footer h3.active i {
+    transform: rotate(180deg);
+}
+
+.footer ol {
+    padding-left: 15px;
+    display: none;
+    animation: fadeIn 0.5s ease forwards;
+    list-style: none;
+    margin-top: 10px;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.footer ol.active {
+    display: block;
+}
+
+.footer ol a {
+    text-decoration: none;
+    display: block;
+    font-weight: 500;
+    padding: 10px 0;
+    transition: var(--transition-fast);
+    position: relative;
+    padding-right: 15px;
+    color: var(--text-color);
+}
+
+.footer ol a::before {
+    content: '→';
+    position: absolute;
+    right: 0;
+    opacity: 0;
+    transition: var(--transition-fast);
+}
+
+.footer ol a:hover {
+    color: var(--primary-color);
+    padding-right: 20px;
+}
+
+.footer ol a:hover::before {
+    opacity: 1;
+}
+
+/* Mobile Footer Social Icons */
+.footer .info {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+}
+
+.footer .info i {
+    margin: 5px;
+    background-color: var(--primary-color);
+    padding: 12px;
+    border-radius: var(--border-radius-circle);
+    cursor: pointer;
+    color: var(--white);
+    font-size: 20px;
+    transition: var(--transition-fast);
+    box-shadow: var(--shadow-light);
+}
+
+.footer .info i:hover {
+    background-color: var(--primary-dark);
+    transform: translateY(-3px) scale(1.1);
+    box-shadow: var(--shadow-medium);
+}
+
+.footer h4 {
+    text-align: center;
+    margin-top: 20px;
+    color: var(--text-light);
+    font-weight: 500;
+}
+
+/* Mobile Footer Contact Section */
+.footer .item:last-child a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: var(--transition-fast);
+}
+
+.footer .item:last-child a:hover {
+    color: var(--primary-color);
+    transform: translateX(5px);
+}
+
+.footer .item:last-child i {
+    color: var(--primary-color);
+}
+
+/* Footer Fade-in Animation */
+footer.fade-in,
+.copyright.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: footerFadeIn 0.8s forwards;
+}
+
+@keyframes footerFadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ===== Responsive Footer ===== */
+@media screen and (max-width: 1200px) {
+    footer {
+        padding: 30px 40px;
+        gap: 30px;
+    }
+    
+    footer img {
+        width: 180px;
+    }
+    
+    .copyright {
+        padding: 15px 40px;
+    }
+    
+    footer .item {
+        min-width: 180px;
+    }
+    
+    footer .item:first-child {
+        min-width: 250px;
+    }
+}
+
+@media screen and (max-width: 1045px) {
+    footer {
+        display: none;
+    }
+    
+    .footer {
+        display: flex;
+    }
+    
+    .copyright {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .footer .item {
+        padding: 15px;
+    }
+    
+    .footer h3 {
+        font-size: 18px;
+    }
+    
+    .copyright {
+        flex-direction: column;
+        gap: 15px;
+        padding: 15px 20px;
+        text-align: center;
+    }
+    
+    .copyright .info {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
+
+@media screen and (max-width: 520px) {
+    .footer .item {
+        padding: 12px;
+    }
+    
+    .footer h3 {
+        font-size: 16px;
+    }
+    
+    .footer .info i {
+        font-size: 18px;
+        padding: 10px;
+    }
+    
+    /* Add margin to sections for better spacing on mobile */
+    .about,
+    .Subjects,
+    .vido,
+    .tracks,
+    .learn {
+        margin-bottom: 30px;
+    }
+}
+
+@media screen and (max-width: 350px) {
+    .footer {
+        padding: 15px 10px;
+    }
+    
+    .footer .item {
+        padding: 10px;
+    }
+    
+    .footer h3 {
+        font-size: 14px;
+    }
+    
+    .footer .info i {
+        font-size: 16px;
+        padding: 8px;
+    }
+}

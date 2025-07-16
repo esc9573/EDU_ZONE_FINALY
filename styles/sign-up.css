@@ -1,0 +1,408 @@
+@import url('variables.css');
+
+/* ===== Basic Styles ===== */
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--white);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+a {
+    color: var(--text-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+img {
+    object-fit: cover;
+}
+
+
+/* ===== Main Content ===== */
+
+.signup {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 100vh;
+    padding: 8rem 11% 5rem 11%;
+    animation: fadeIn 0.8s ease forwards;
+    will-change: opacity, transform;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* ===== Left Side ===== */
+
+.signup .left {
+    width: 380px;
+    background-color: var(--white);
+    padding: var(--padding-lg);
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow-medium);
+    transition: var(--transition-fast);
+    will-change: transform, box-shadow;
+    overflow: hidden;
+    position: relative;
+}
+
+.signup .left:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-dark);
+}
+
+.signup .left h1 {
+    color: var(--primary-color);
+    text-transform: capitalize;
+    font-size: 40px;
+    margin-bottom: var(--margin-sm);
+    position: relative;
+}
+
+.signup .left h1::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 50px;
+    height: 3px;
+    background-color: var(--primary-color);
+    border-radius: 10px;
+}
+
+.signup .left p {
+    font-size: 14px;
+    margin-bottom: var(--margin-lg);
+    color: var(--text-light);
+}
+
+
+/* ===== Input Fields ===== */
+
+.signup .input_ground {
+    width: 100%;
+    height: 50px;
+    margin-bottom: var(--margin-md);
+    position: relative;
+}
+
+.signup .input_ground i.fas {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--primary-color);
+    font-size: 18px;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.signup .input_ground input {
+    width: 100%;
+    height: 100%;
+    font-size: 16px;
+    background-color: var(--white);
+    outline: none;
+    border: 1px solid var(--border-color);
+    padding: 0 45px;
+    border-radius: var(--border-radius-md);
+    box-shadow: var(--shadow-light);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    z-index: 1;
+}
+
+.signup .input_ground input:focus {
+    border-color: var(--primary-color);
+    box-shadow: var(--focus-shadow);
+}
+
+.signup .input_ground input::placeholder {
+    font-size: 15px;
+    color: var(--text-lighter);
+}
+
+.signup .input_ground.password {
+    margin-bottom: var(--margin-md);
+}
+
+.signup .input_ground.password input {
+    padding-right: 45px;
+}
+
+.signup .input_ground .toggle-password {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--text-lighter);
+    cursor: pointer;
+    transition: color 0.3s ease;
+    z-index: 2;
+}
+
+.signup .input_ground .toggle-password:hover {
+    color: var(--primary-color);
+}
+
+
+/* ===== Password Strength Meter ===== */
+
+.signup .password-strength {
+    margin-bottom: var(--margin-sm);
+}
+
+.signup .strength-meter {
+    width: 100%;
+    height: 5px;
+    background-color: #eee;
+    border-radius: var(--border-radius-sm);
+    overflow: hidden;
+    margin-bottom: 5px;
+}
+
+.signup .strength-bar {
+    height: 100%;
+    width: 0;
+    background-color: var(--weak-color);
+    transition: width 0.3s ease, background-color 0.3s ease;
+    will-change: width, background-color;
+}
+
+.signup .strength-text {
+    font-size: 12px;
+    color: var(--text-light);
+    text-align: right;
+}
+
+
+/* ===== Password Requirements ===== */
+
+.signup .password-requirements {
+    margin-bottom: var(--margin-md);
+    background-color: var(--light-bg);
+    padding: var(--padding-sm);
+    border-radius: var(--border-radius-md);
+}
+
+.signup .password-requirements p {
+    font-size: 12px;
+    color: var(--text-color);
+    margin-bottom: 5px;
+    display: flex;
+    align-items: center;
+}
+
+.signup .password-requirements p:last-child {
+    margin-bottom: 0;
+}
+
+.signup .password-requirements p i {
+    color: #ccc;
+    margin-right: 8px;
+    transition: color 0.3s ease;
+}
+
+
+/* ===== Button Styles ===== */
+
+.signup .signup-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 12px 0;
+    text-transform: capitalize;
+    background-color: var(--primary-color);
+    border: none;
+    cursor: pointer;
+    border-radius: var(--border-radius-md);
+    font-size: 16px;
+    color: var(--white);
+    font-weight: 500;
+    box-shadow: var(--shadow-light);
+    margin-bottom: var(--margin-md);
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    will-change: transform, box-shadow;
+}
+
+.signup .signup-btn:hover {
+    background-color: var(--primary-dark);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-medium);
+}
+
+.signup .signup-btn:active {
+    transform: translateY(0);
+}
+
+.signup .signup-btn i {
+    margin-right: 10px;
+}
+
+
+/* ===== Social Login ===== */
+
+.signup .social-login {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: var(--margin-md) 0;
+}
+
+.signup .social-login p {
+    margin: 0 10px;
+    font-size: 15px;
+    color: var(--text-light);
+}
+
+.signup .social-login .google-btn {
+    border: 1px solid var(--border-color);
+    padding: 10px 15px;
+    font-size: 20px;
+    border-radius: var(--border-radius-md);
+    color: var(--text-light);
+    transition: var(--transition-fast);
+    box-shadow: var(--shadow-light);
+}
+
+.signup .social-login .google-btn:hover {
+    color: var(--primary-color);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-medium);
+}
+
+.signup .login-link {
+    font-size: 16px;
+    text-align: center;
+    color: var(--text-light);
+    margin-top: var(--margin-sm);
+}
+
+.signup .login-link a {
+    margin-left: 8px;
+    color: var(--primary-color);
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.signup .login-link a:hover {
+    color: var(--primary-dark);
+    text-decoration: underline;
+}
+
+
+/* ===== Right Side ===== */
+
+.signup .right {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+}
+
+.signup .right img {
+    width: clamp(300px, 100%, 550px);
+    border-radius: var(--border-radius-lg);
+    box-shadow: none;
+    transition: transform 0.4s ease;
+    will-change: transform;
+    content-visibility: auto;
+}
+
+.signup .right img:hover {
+    transform: scale(1.02);
+}
+
+
+/* ===== Responsive Design ===== */
+
+@media screen and (max-width: 1200px) {
+    .signup {
+        padding: 8rem 8% 5rem 8%;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .signup {
+        padding: 8rem 5% 5rem 5%;
+        justify-content: center;
+        flex-direction: column;
+    }
+    .signup .left {
+        order: 2;
+        width: 100%;
+        max-width: 450px;
+    }
+    .signup .right {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .signup {
+        padding: 8rem 3% 5rem 3%;
+        /* تم تعديل القيمة العلوية */
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .signup {
+        padding: 6rem var(--padding-md) 3rem var(--padding-md);
+        /* تم تعديل القيمة العلوية */
+    }
+    .signup .left {
+        padding: var(--padding-md);
+        box-shadow: var(--shadow-light);
+    }
+    .signup .left h1 {
+        font-size: 32px;
+    }
+    .signup .input_ground {
+        height: 45px;
+    }
+    .signup .signup-btn {
+        padding: 10px 0;
+        font-size: 16px;
+    }
+}
+
+
+/* Support for reduced motion preference */
+
+@media (prefers-reduced-motion: reduce) {
+    .signup {
+        animation: none;
+    }
+    .signup .left:hover {
+        transform: none;
+    }
+    .signup .signup-btn:hover {
+        transform: none;
+    }
+    .signup .right img:hover {
+        transform: none;
+    }
+    .spinner {
+        animation-duration: 1.5s;
+    }
+}

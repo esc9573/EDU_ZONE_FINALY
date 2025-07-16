@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+/* ===== CSS VARIABLES ===== */
+
+:root {
+    /* ===== FONTS ===== */
+    --font-primary: 'Poppins', sans-serif;
+    --font-secondary: 'Inter', sans-serif;
+    /* ===== COLORS: PRIMARY & SECONDARY ===== */
+    --primary-color: #0559CF;
+    --primary-light: #A8CCFF;
+    --primary-dark: #084aa7;
+    --secondary-color: #0B81CA;
+    --secondary-dark: #e05e00;
+    --secondary-light: #fff0e6;
+    --secondary-color: #F1F7FF;
+    /* ===== TEXT COLORS ===== */
+    --text-color: #333333;
+    --text-light: #666666;
+    --text-lighter: #999999;
+    /* ===== BACKGROUND COLORS ===== */
+    --light-bg: #f0f8ff;
+    --white: #ffffff;
+    --off-white: #f5f5f5;
+    --dark-white: #e8e8e8;
+    --black: #000000;
+    --bg-primary: #ffffff;
+    --bg-secondary: #f8fafc;
+    --bg-tertiary: #f1f5f9;
+    --bg-dark: #1e293b;
+    --sidebar-bg: #f8f9fa;
+    --card-bg: #ffffff;
+    /* ===== BORDER COLORS ===== */
+    --border-color: #e0e0e0;
+    /* ===== STATUS COLORS ===== */
+    --success-color: #2ecc71;
+    --success-dark: #27ae60;
+    --success-light: #e6f7e9;
+    --warning-color: #f39c12;
+    --warning-dark: #e67e22;
+    --danger-color: #e74c3c;
+    --danger-dark: #c0392b;
+    --danger-light: #f8e7e9;
+    --info-color: #3b82f6;
+    /* ===== PASSWORD STRENGTH COLORS ===== */
+    --weak-color: #f44336;
+    --fair-color: #FF9800;
+    --good-color: #2196F3;
+    --strong-color: #4CAF50;
+    /* ===== LANGUAGE COLORS ===== */
+    --cpp-color: #00599c;
+    --java-color: #ed8b00;
+    --python-color: #3776ab;
+    --javascript-color: #f7df1e;
+    --html-color: #e34f26;
+    /* ===== DIFFICULTY COLORS ===== */
+    --beginner-color: #10b981;
+    --intermediate-color: #f59e0b;
+    --advanced-color: #ef4444;
+    /* ===== CODE COLORS ===== */
+    --code-bg: #1e1e1e;
+    --code-text: #ccc;
+    --code-highlight: #7ec5ff;
+    /* ===== UI STATES ===== */
+    --category-active: #e6f0ff;
+    --category-hover: #f0f7ff;
+    /* ===== GRADIENTS ===== */
+    --bg-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    --gradient-start: #084aa7;
+    --gradient-middle: #0559CF;
+    --gradient-end: #5b91dc;
+    /* ===== SHADOWS ===== */
+    --shadow-light: 0 2px 10px rgba(0, 0, 0, 0.1);
+    --shadow-medium: 0 5px 15px rgba(0, 0, 0, 0.15);
+    --shadow-dark: 0 8px 30px rgba(0, 0, 0, 0.2);
+    --shadow-heavy: 0 10px 30px rgba(0, 0, 0, 0.2);
+    --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    --focus-shadow: 0 0 6px rgba(5, 89, 207, 0.3);
+    /* ===== TRANSITIONS ===== */
+    --transition-fast: all 0.3s ease;
+    --transition-medium: all 0.4s ease;
+    --transition-slow: all 0.5s ease;
+    /* ===== BORDER RADIUS ===== */
+    --border-radius-sm: 5px;
+    --border-radius-md: 10px;
+    --border-radius-lg: 15px;
+    --border-radius-xl: 20px;
+    --border-radius-special: 35px 20px;
+    --border-radius-circle: 50%;
+    /* ===== SPACING ===== */
+    --spacing-xs: 5px;
+    --spacing-sm: 10px;
+    --spacing-md: 20px;
+    --spacing-lg: 30px;
+    --spacing-xl: 40px;
+    /* ===== PADDING ===== */
+    --padding-sm: 10px;
+    --padding-md: 20px;
+    --padding-lg: 30px;
+    /* ===== MARGINS ===== */
+    --margin-sm: 10px;
+    --margin-md: 20px;
+    --margin-lg: 30px;
+}

@@ -1,0 +1,311 @@
+@import url('variables.css');
+
+/* ===== Basic Styles ===== */
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    background-color: var(--white);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+
+/* ===== Main Content ===== */
+
+.main {
+    min-height: 100vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    padding: 5rem 11%;
+    animation: fadeIn 0.8s ease forwards;
+    will-change: opacity, transform;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* ===== Form Styles ===== */
+
+.main form {
+    width: 380px;
+    background-color: var(--white);
+    padding: var(--padding-lg);
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow-medium);
+    transition: var(--transition-fast);
+    will-change: transform, box-shadow;
+}
+
+.main form:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-dark);
+}
+
+.main form h1 {
+    color: var(--primary-color);
+    text-transform: capitalize;
+    font-size: 40px;
+    margin-bottom: var(--margin-sm);
+    position: relative;
+}
+
+.main form h1::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 50px;
+    height: 3px;
+    background-color: var(--primary-color);
+    border-radius: 10px;
+}
+
+.main form .p1 {
+    font-size: 14px;
+    margin-bottom: var(--margin-lg);
+    color: var(--text-light);
+}
+
+
+/* ===== Input Fields ===== */
+
+.main form .input_ground {
+    width: 100%;
+    height: 50px;
+    margin-bottom: var(--margin-md);
+    position: relative;
+}
+
+.main form .input_ground i.fas.fa-envelope,
+.main form .input_ground i.fas.fa-lock {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--primary-color);
+    font-size: 18px;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.main form .input_ground .toggle-password {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--text-lighter);
+    cursor: pointer;
+    transition: color 0.3s ease;
+    z-index: 2;
+}
+
+.main form .input_ground .toggle-password:hover {
+    color: var(--primary-color);
+}
+
+.main form .input_ground input {
+    width: 100%;
+    height: 100%;
+    font-size: 16px;
+    background-color: var(--white);
+    outline: none;
+    border: 1px solid var(--border-color);
+    padding: 0 45px;
+    border-radius: var(--border-radius-md);
+    box-shadow: var(--shadow-light);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    z-index: 1;
+}
+
+.main form .input_ground input:focus {
+    border-color: var(--primary-color);
+    box-shadow: var(--focus-shadow);
+}
+
+.main form .input_ground input::placeholder {
+    font-size: 15px;
+    color: var(--text-lighter);
+}
+
+
+/* ===== Registration Links ===== */
+
+.main form .regist {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: var(--margin-md);
+}
+
+.main form .regist a,
+.main form .p2 a {
+    text-decoration: none;
+    color: var(--primary-color);
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.main form .regist a:hover,
+.main form .p2 a:hover {
+    color: var(--primary-dark);
+    text-decoration: underline;
+}
+
+
+/* ===== Login Button ===== */
+
+.main form button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 12px 0;
+    text-transform: capitalize;
+    background-color: var(--primary-color);
+    border: none;
+    cursor: pointer;
+    margin-top: 15px;
+    border-radius: var(--border-radius-md);
+    font-size: 18px;
+    color: var(--white);
+    font-weight: 500;
+    box-shadow: var(--shadow-light);
+    margin-bottom: var(--margin-md);
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    will-change: transform, box-shadow;
+}
+
+.main form button i {
+    margin-right: 10px;
+}
+
+.main form button:hover {
+    background-color: var(--primary-dark);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-medium);
+}
+
+.main form button:active {
+    transform: translateY(0);
+}
+
+.main form .p2 {
+    font-size: 16px;
+    text-align: center;
+    color: var(--text-light);
+}
+
+.main form .p2 a {
+    font-weight: 600;
+}
+
+
+/* ===== Image Styles ===== */
+
+.main img {
+    width: clamp(300px, 100%, 550px);
+    border-radius: var(--border-radius-lg);
+    box-shadow: none;
+    transition: transform 0.4s ease;
+    will-change: transform;
+    content-visibility: auto;
+}
+
+.main img:hover {
+    transform: scale(1.02);
+}
+
+
+/* ===== Responsive Design ===== */
+
+@media screen and (max-width: 1200px) {
+    .main {
+        padding: 5rem 8%;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .main {
+        padding: 5rem 5%;
+        justify-content: center;
+    }
+    .main form {
+        order: 2;
+        width: 100%;
+        max-width: 450px;
+    }
+    .main img {
+        order: 1;
+        max-width: 450px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .main {
+        padding: 5rem 3%;
+    }
+    .main form {
+        width: 100%;
+        max-width: 450px;
+    }
+    .main img {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .main {
+        padding: 3rem var(--padding-md);
+    }
+    .main form {
+        padding: var(--padding-md);
+        box-shadow: var(--shadow-light);
+    }
+    .main form h1 {
+        font-size: 32px;
+    }
+    .main form .input_ground {
+        height: 45px;
+    }
+    .main form button {
+        padding: 10px 0;
+        font-size: 16px;
+    }
+}
+
+
+/* Support for reduced motion preference */
+
+@media (prefers-reduced-motion: reduce) {
+    .main {
+        animation: none;
+    }
+    .main form:hover {
+        transform: none;
+    }
+    .main form button:hover {
+        transform: none;
+    }
+    .spinner {
+        animation-duration: 1.5s;
+    }
+}

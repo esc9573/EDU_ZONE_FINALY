@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../../components/quizzes.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>MCQ Quiz - JavaScript</title>
+</head>
+
+<body>
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="spinner"></div>
+    </div>
+
+    <!-- Quiz Header -->
+    <div class="quiz-header">
+        <div class="quiz-header-content">
+            <h1>JavaScript Programming Quiz</h1>
+            <p>Test your knowledge of JavaScript programming concepts with this comprehensive quiz covering basic to advanced topics.</p>
+            <div class="quiz-stats">
+                <div class="stat">
+                    <i class="fas fa-question-circle"></i>
+                    <span>20 Questions</span>
+                </div>
+                <div class="stat">
+                    <i class="fas fa-clock"></i>
+                    <span>30 Minutes</span>
+                </div>
+                <div class="stat">
+                    <i class="fas fa-trophy"></i>
+                    <span>Certificate Available</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="quiz-container">
+        <!-- Section Indicator -->
+        <div class="section-indicator" id="sectionIndicator">Basic Concepts</div>
+
+        <!-- Quiz Instructions -->
+        <div class="quiz-instructions">
+            <h3><i class="fas fa-info-circle"></i> Instructions</h3>
+            <ul>
+                <li>Read each question carefully before selecting an answer</li>
+                <li>Each question has only one correct answer</li>
+                <li>You can navigate between sections using the buttons at the bottom</li>
+                <li>Click "Check Answers" to see your score for each section</li>
+            </ul>
+        </div>
+
+        <!-- Timer -->
+        <div class="timer">
+            <i class="fas fa-clock"></i>
+            <span id="timeLeft">30:00</span>
+        </div>
+
+        <!-- Section 1 (Questions 1-7) -->
+        <div class="quiz-section" id="section1">
+            <h2 class="section-title">Basic Concepts (Questions 1-7)</h2>
+
+            <!-- Question 1 -->
+            <div class="question">
+                <p>1. What is JavaScript primarily used for?</p>
+                <div class="options">
+                    <label><input type="radio" name="q1" value="a"><span>Styling web pages</span></label>
+                    <label><input type="radio" name="q1" value="b"><span>Adding interactivity to web pages</span></label>
+                    <label><input type="radio" name="q1" value="c"><span>Creating database tables</span></label>
+                </div>
+            </div>
+
+            <!-- Question 2 -->
+            <div class="question">
+                <p>2. How do you write "Hello World" in an alert box?</p>
+                <div class="options">
+                    <label><input type="radio" name="q2" value="a"><span>alertBox("Hello World");</span></label>
+                    <label><input type="radio" name="q2" value="b"><span>msg("Hello World");</span></label>
+                    <label><input type="radio" name="q2" value="c"><span>alert("Hello World");</span></label>
+                </div>
+            </div>
+
+            <!-- Question 3 -->
+            <div class="question">
+                <p>3. How do you declare a variable in JavaScript?</p>
+                <div class="options">
+                    <label><input type="radio" name="q3" value="a"><span>var myVar;</span></label>
+                    <label><input type="radio" name="q3" value="b"><span>variable myVar;</span></label>
+                    <label><input type="radio" name="q3" value="c"><span>v myVar;</span></label>
+                </div>
+            </div>
+
+            <!-- Question 4 -->
+            <div class="question">
+                <p>4. Which operator is used for strict equality in JavaScript?</p>
+                <div class="options">
+                    <label><input type="radio" name="q4" value="a"><span>=</span></label>
+                    <label><input type="radio" name="q4" value="b"><span>==</span></label>
+                    <label><input type="radio" name="q4" value="c"><span>===</span></label>
+                </div>
+            </div>
+
+            <!-- Question 5 -->
+            <div class="question">
+                <p>5. What will this code output? console.log(typeof 42);</p>
+                <pre class="code-block">console.log(typeof 42);</pre>
+                <div class="options">
+                    <label><input type="radio" name="q5" value="a"><span>"number"</span></label>
+                    <label><input type="radio" name="q5" value="b"><span>"integer"</span></label>
+                    <label><input type="radio" name="q5" value="c"><span>"float"</span></label>
+                </div>
+            </div>
+
+            <!-- Question 6 -->
+            <div class="question">
+                <p>6. How do you create a function in JavaScript?</p>
+                <div class="options">
+                    <label><input type="radio" name="q6" value="a"><span>function myFunction() {}</span></label>
+                    <label><input type="radio" name="q6" value="b"><span>def myFunction() {}</span></label>
+                    <label><input type="radio" name="q6" value="c"><span>func myFunction() {}</span></label>
+                </div>
+            </div>
+
+            <!-- Question 7 -->
+            <div class="question">
+                <p>7. Which method removes the last element from an array?</p>
+                <div class="options">
+                    <label><input type="radio" name="q7" value="a"><span>pop()</span></label>
+                    <label><input type="radio" name="q7" value="b"><span>shift()</span></label>
+                    <label><input type="radio" name="q7" value="c"><span>remove()</span></label>
+                </div>
+            </div>
+
+            <!-- Progress Bar -->
+            <div class="progress-container">
+                <div class="progress-bar" style="width: 35%;"></div>
+            </div>
+
+            <div class="navigation-buttons">
+                <button class="check-btn" onclick="checkSection(1)"><i class="fas fa-check-circle"></i> Check Answers</button>
+                <button class="next-btn" onclick="if(checkSection(1)) showSection(2)"><i class="fas fa-arrow-right"></i> Next Section</button>
+            </div>
+
+            <div class="result" id="result1"></div>
+            <div class="incorrect" id="incorrect1"></div>
+        </div>
+
+        <!-- Section 2 (Questions 8-14) -->
+        <div class="quiz-section" id="section2">
+            <h2 class="section-title">Intermediate Concepts (Questions 8-14)</h2>
+
+            <!-- Question 8 -->
+            <div class="question">
+                <p>8. What does the "this" keyword refer to in JavaScript?</p>
+                <div class="options">
+                    <label><input type="radio" name="q8" value="a"><span>The current function</span></label>
+                    <label><input type="radio" name="q8" value="b"><span>The current object</span></label>
+                    <label><input type="radio" name="q8" value="c"><span>The parent object</span></label>
+                </div>
+            </div>
+
+            <!-- Question 9 -->
+            <div class="question">
+                <p>9. What is the correct way to write an IF statement in JavaScript?</p>
+                <div class="options">
+                    <label><input type="radio" name="q9" value="a"><span>if (i == 5) {}</span></label>
+                    <label><input type="radio" name="q9" value="b"><span>if i = 5 then {}</span></label>
+                    <label><input type="radio" name="q9" value="c"><span>if i == 5 then {}</span></label>
+                </div>
+            </div>
+
+            <!-- Question 10 -->
+            <div class="question">
+                <p>10. How do you add a comment in JavaScript?</p>
+                <div class="options">
+                    <label><input type="radio" name="q10" value="a"><span>// This is a comment</span></label>
+                    <label><input type="radio" name="q10" value="b"><span>&lt;!-- This is a comment --&gt;</span></label>
+                    <label><input type="radio" name="q10" value="c"><span>* This is a comment *</span></label>
+                </div>
+            </div>
+
+            <!-- Question 11 -->
+            <div class="question">
+                <p>11. Which event occurs when the user clicks on an HTML element?</p>
+                <div class="options">
+                    <label><input type="radio" name="q11" value="a"><span>onchange</span></label>
+                    <label><input type="radio" name="q11" value="b"><span>onclick</span></label>
+                    <label><input type="radio" name="q11" value="c"><span>onmouseover</span></label>
+                </div>
+            </div>
+
+            <!-- Question 12 -->
+            <div class="question">
+                <p>12. How do you round the number 7.25 to the nearest integer?</p>
+                <pre class="code-block">// How to round 7.25 to the nearest integer?
+Math.?(7.25);</pre>
+                <div class="options">
+                    <label><input type="radio" name="q12" value="a"><span>Math.round(7.25)</span></label>
+                    <label><input type="radio" name="q12" value="b"><span>round(7.25)</span></label>
+                    <label><input type="radio" name="q12" value="c"><span>Math.rnd(7.25)</span></label>
+                </div>
+            </div>
+
+            <!-- Question 13 -->
+            <div class="question">
+                <p>13. What will this code return? Boolean(10 > 9)</p>
+                <pre class="code-block">Boolean(10 > 9);</pre>
+                <div class="options">
+                    <label><input type="radio" name="q13" value="a"><span>true</span></label>
+                    <label><input type="radio" name="q13" value="b"><span>false</span></label>
+                    <label><input type="radio" name="q13" value="c"><span>NaN</span></label>
+                </div>
+            </div>
+
+            <!-- Question 14 -->
+            <div class="question">
+                <p>14. Which operator is used to concatenate strings in JavaScript?</p>
+                <div class="options">
+                    <label><input type="radio" name="q14" value="a"><span>+</span></label>
+                    <label><input type="radio" name="q14" value="b"><span>&</span></label>
+                    <label><input type="radio" name="q14" value="c"><span>concat()</span></label>
+                </div>
+            </div>
+
+            <!-- Progress Bar -->
+            <div class="progress-container">
+                <div class="progress-bar" style="width: 70%;"></div>
+            </div>
+
+            <div class="navigation-buttons">
+                <button class="prev-btn" onclick="showSection(1)"><i class="fas fa-arrow-left"></i> Previous Section</button>
+                <button class="check-btn" onclick="checkSection(2)"><i class="fas fa-check-circle"></i> Check Answers</button>
+                <button class="next-btn" onclick="if(checkSection(2)) showSection(3)"><i class="fas fa-arrow-right"></i> Next Section</button>
+            </div>
+
+            <div class="result" id="result2"></div>
+            <div class="incorrect" id="incorrect2"></div>
+        </div>
+
+        <!-- Section 3 (Questions 15-20) -->
+        <div class="quiz-section" id="section3">
+            <h2 class="section-title">Advanced Concepts (Questions 15-20)</h2>
+
+            <!-- Question 15 -->
+            <div class="question">
+                <p>15. What is the correct way to create a JavaScript array?</p>
+                <div class="options">
+                    <label><input type="radio" name="q15" value="a"><span>var colors = ["red", "green", "blue"]</span></label>
+                    <label><input type="radio" name="q15" value="b"><span>var colors = "red", "green", "blue"</span></label>
+                    <label><input type="radio" name="q15" value="c"><span>var colors = (1:"red", 2:"green", 3:"blue")</span></label>
+                </div>
+            </div>
+
+            <!-- Question 16 -->
+            <div class="question">
+                <p>16. How do you find the length of a string in JavaScript?</p>
+                <div class="options">
+                    <label><input type="radio" name="q16" value="a"><span>str.length</span></label>
+                    <label><input type="radio" name="q16" value="b"><span>str.len</span></label>
+                    <label><input type="radio" name="q16" value="c"><span>length(str)</span></label>
+                </div>
+            </div>
+
+            <!-- Question 17 -->
+            <div class="question">
+                <p>17. What will this code output? console.log(2 + "2");</p>
+                <pre class="code-block">console.log(2 + "2");</pre>
+                <div class="options">
+                    <label><input type="radio" name="q17" value="a"><span>4</span></label>
+                    <label><input type="radio" name="q17" value="b"><span>"22"</span></label>
+                    <label><input type="radio" name="q17" value="c"><span>"4"</span></label>
+                </div>
+            </div>
+
+            <!-- Question 18 -->
+            <div class="question">
+                <p>18. Which keyword is used to declare a constant in JavaScript?</p>
+                <div class="options">
+                    <label><input type="radio" name="q18" value="a"><span>const</span></label>
+                    <label><input type="radio" name="q18" value="b"><span>let</span></label>
+                    <label><input type="radio" name="q18" value="c"><span>constant</span></label>
+                </div>
+            </div>
+
+            <!-- Question 19 -->
+            <div class="question">
+                <p>19. What does the Array.map() method do?</p>
+                <div class="options">
+                    <label><input type="radio" name="q19" value="a"><span>Creates a new array with results of calling a function on every element</span></label>
+                    <label><input type="radio" name="q19" value="b"><span>Changes the original array</span></label>
+                    <label><input type="radio" name="q19" value="c"><span>Filters the array based on a condition</span></label>
+                </div>
+            </div>
+
+            <!-- Question 20 -->
+            <div class="question">
+                <p>20. What is the purpose of the "use strict" directive?</p>
+                <pre class="code-block">"use strict";
+// JavaScript code here</pre>
+                <div class="options">
+                    <label><input type="radio" name="q20" value="a"><span>To enforce stricter parsing and error handling</span></label>
+                    <label><input type="radio" name="q20" value="b"><span>To allow more flexible coding</span></label>
+                    <label><input type="radio" name="q20" value="c"><span>To enable experimental features</span></label>
+                </div>
+            </div>
+
+            <!-- Progress Bar -->
+            <div class="progress-container">
+                <div class="progress-bar" style="width: 100%;"></div>
+            </div>
+
+            <div class="navigation-buttons">
+                <button class="prev-btn" onclick="showSection(2)"><i class="fas fa-arrow-left"></i> Previous Section</button>
+                <button class="check-btn" onclick="checkSection(3)"><i class="fas fa-check-circle"></i> Check Answers</button>
+                <button class="finish-btn" onclick="showFinalResults()"><i class="fas fa-flag-checkered"></i> Finish Quiz</button>
+            </div>
+
+            <div class="result" id="result3"></div>
+            <div class="incorrect" id="incorrect3"></div>
+        </div>
+
+        <!-- Final Results Summary (Initially Hidden) -->
+        <div class="results-summary" id="finalResults" style="display: none;">
+            <h3>Quiz Completed!</h3>
+            <div class="score-container">
+                <div class="score-circle">
+                    <span id="scorePercent">0%</span>
+                </div>
+            </div>
+            <div class="stats-container">
+                <div class="stat-item">
+                    <i class="fas fa-check-circle correct-icon"></i>
+                    <span id="correctCount">0</span> Correct
+                </div>
+                <div class="stat-item">
+                    <i class="fas fa-times-circle incorrect-icon"></i>
+                    <span id="incorrectCount">0</span> Incorrect
+                </div>
+                <div class="stat-item">
+                    <i class="fas fa-question-circle unanswered-icon"></i>
+                    <span id="unansweredCount">0</span> Unanswered
+                </div>
+            </div>
+            <div class="results-message" id="resultsMessage"></div>
+            <div class="results-buttons">
+                <button class="retry-btn" onclick="location.reload()"><i class="fas fa-redo"></i> Retry Quiz</button>
+                <button class="courses-btn" onclick="window.location.href='../../../pages/courses-home.html'"><i class="fas fa-book"></i> Back to Courses</button>
+                <button class="certificate-btn" id="certificateBtn"><i class="fas fa-certificate"></i> Get Certificate</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Back to Top Button -->
+    <div class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
+    <!-- Confetti Container for Celebration -->
+    <div id="confettiContainer"></div>
+
+    <script>
+        const config = {
+                answers: {
+                    q1: "b",
+                    q2: "c",
+                    q3: "a",
+                    q4: "c",
+                    q5: "a",
+                    q6: "a",
+                    q7: "a",
+                    q8: "b",
+                    q9: "a",
+                    q10: "a",
+                    q11: "b",
+                    q12: "a",
+                    q13: "a",
+                    q14: "a",
+                    q15: "a",
+                    q16: "a",
+                    q17: "b",
+                    q18: "a",
+                    q19: "a",
+                    q20: "a"
+                },
+                sections: {
+                    1: {
+                        s: 1,
+                        e: 7,
+                        t: "Basic"
+                    },
+                    2: {
+                        s: 8,
+                        e: 14,
+                        t: "Intermediate"
+                    },
+                    3: {
+                        s: 15,
+                        e: 20,
+                        t: "Advanced"
+                    }
+                },
+                minScore: 4
+            },
+            el = {
+                title: document.getElementById("sectionIndicator"),
+                timer: document.getElementById("timeLeft"),
+                results: document.getElementById("finalResults")
+            };
+
+        function showSection(num) {
+            document.querySelectorAll(".quiz-section").forEach(s => s.style.display = "none");
+            document.getElementById(`section${num}`).style.display = "block";
+            el.title.textContent = config.sections[num].t;
+            scrollTo(0, 0);
+        }
+
+        function checkSection(num) {
+            const {
+                s,
+                e
+            } = config.sections[num];
+            let score = 0,
+                wrong = [];
+            for (let i = s; i <= e; i++) {
+                const a = document.querySelector(`input[name="q${i}"]:checked`),
+                    c = config.answers[`q${i}`];
+                if (a) {
+                    a.parentElement.classList.add(a.value === c ? "correct" : "incorrect");
+                    a.value === c ? score++ : wrong.push(`Q${i}: إجابتك (${a.value})، الصحيح (${c})`);
+                } else wrong.push(`Q${i}: لم تختر إجابة`);
+            }
+            document.getElementById(`result${num}`).innerHTML = `<h3>النتيجة: ${score}/${e - s + 1}</h3>`;
+            document.getElementById(`incorrect${num}`).innerHTML = wrong.length ? wrong.join("<br>") : "كل الإجابات صحيحة!";
+            return score < config.minScore ? alert(`تحتاج ${config.minScore} إجابات صحيحة للمتابعة. نتيجتك: ${score}`) || false : true;
+        }
+
+        function showFinal() {
+            let c = 0,
+                w = 0;
+            for (const q in config.answers) {
+                const a = document.querySelector(`input[name="${q}"]:checked`);
+                a ? (a.value === config.answers[q] ? c++ : w++) : 0;
+            }
+            const p = Math.round((c / 20) * 100),
+                m = p >= 90 ? "ممتاز!" : p >= 70 ? "جيد جداً!" : p >= 50 ? "جيد!" : "تحتاج تحسين";
+            document.getElementById("scorePercent").textContent = `${p}%`;
+            document.getElementById("correctCount").textContent = c;
+            document.getElementById("resultsMessage").innerHTML = `<h3>${m}</h3>`;
+            document.querySelectorAll(".quiz-section").forEach(s => s.style.display = "none");
+            el.results.style.display = "block";
+        }
+
+        function startTimer(sec) {
+            setInterval(() => {
+                if (sec < 0) return showFinal();
+                el.timer.textContent = `${String(Math.floor(sec / 60)).padStart(2, '0')}:${String(sec % 60).padStart(2, '0')}`;
+                sec--;
+            }, 1000);
+        }
+
+        window.addEventListener("load", () => {
+            document.querySelector(".preloader").style.display = "none";
+            showSection(new URLSearchParams(location.search).get("section") || 1);
+            startTimer(1800);
+        });
+
+        document.getElementById("backToTop").addEventListener("click", () => scrollTo(0, 0));
+    </script>
+
+</body>
+
+</html>

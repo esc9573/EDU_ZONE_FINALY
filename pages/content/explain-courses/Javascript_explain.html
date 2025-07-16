@@ -1,0 +1,971 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="EduZone - An innovative learning platform that provides courses in various fields">
+
+    <!-- Links -->
+    <link rel="stylesheet" href="../../../components/course-explain.css">
+    <link rel="stylesheet" href="../../../components/navbar.css">
+    <link rel="stylesheet" href="../../../components/footer.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <title>JavaScript Explained</title>
+</head>
+
+<body>
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="spinner"></div>
+    </div>
+
+    <!-- Back to Top Button -->
+    <div class="back-to-top" aria-label="Back to Top">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
+    <!-- Navbar -->
+    <nav id="navbar">
+        <div class="nav-logo">
+            <img src="../../../assets/images/home-images/logo.png" alt="EduZone Logo">
+        </div>
+        <div class="nav-links">
+            <a href="../../home.html" class="nav-Home">Home</a>
+            <a href="../../courses-home.html" class="nav-Courses active">Courses</a>
+            <a href="../../quizzes-home.html" class="nav-Quizzes">Quizzes</a>
+            <a href="../../support.html" class="nav-Support">Support</a>
+        </div>
+        <a href="/pages/profile.html">
+            <i class="fa-solid fa-user" id="userIcon" style="cursor: pointer;"></i>
+        </a>
+
+
+        <!-- Navbar Menu For Media Query 990px -->
+        <i class="fa-solid fa-bars menu-icon" aria-label="Open Menu"></i>
+        <div class="navbar-menu">
+            <i class="fa-solid fa-xmark close-btn" aria-label="Close Menu"></i>
+            <ul>
+                <li><a href="/pages/home.html">Home</a></li>
+                <li><a href="/pages/courses-home.html">Courses</a></li>
+                <li><a href="/pages/quizzes-home.html">Quizzes</a></li>
+                <li><a href="/pages/support.html">Support</a></li>
+            </ul>
+            <a href="/pages/profile.html">
+                <i class="fa-solid fa-user" id="userIcon" style="cursor: pointer;"></i>
+            </a>
+
+        </div>
+    </nav>
+
+    <div class="container">
+        <!-- Sidebar Navigation -->
+        <div class="sidebar">
+            <h2>Chapters</h2>
+            <ul>
+                <li><a onclick="togglemenu('chapter1-menu')">1. Introduction</a></li>
+                <ul class="sup" id="chapter1-menu">
+                    <li><a href="#sub1">1.1 What is JavaScript</a></li>
+                    <li><a href="#sub2">1.2 Data Types</a></li>
+                    <li><a href="#sub3">1.3 Variables</a></li>
+                    <li><a href="#sub4">1.4 Constants</a></li>
+                    <li><a href="#sub5">1.5 Key Takeaways</a></li>
+                </ul>
+                <li><a onclick="togglemenu('chapter2-menu')">2. Basics</a></li>
+                <ul class="sup" id="chapter2-menu">
+                    <li><a href="#subb1">2.1 Basic Structure of JavaScript</a></li>
+                    <li><a href="#subb2">2.2 Variables and Data Types</a></li>
+                    <li><a href="#subb3">2.3 Operators in JavaScript</a></li>
+                    <li><a href="#subb4">2.4 Conditional Statements</a></li>
+                    <li><a href="#subb5">2.5 Key Takeaways</a></li>
+                </ul>
+                <li><a onclick="togglemenu('chapter3-menu')">3. Functions</a></li>
+                <ul class="sup" id="chapter3-menu">
+                    <li><a href="#subbb1">3.1 Functions</a></li>
+                    <li><a href="#subbb2">3.2 Function Parameters</a></li>
+                    <li><a href="#subbb3">3.3 Function Calls</a></li>
+                    <li><a href="#subbb5">3.4 Types of Functions</a></li>
+                    <li><a href="#subbb7">3.5 Functions With Return Values</a></li>
+                    <li><a href="#subbb8">3.6 Default Parameters</a></li>
+                    <li><a href="#subbb9">3.7 Arrow Functions</a></li>
+                    <li><a href="#subbb10">3.8 Function Scope</a></li>
+                </ul>
+                <li><a href="#chapter4">4. Objects & Arrays</a></li>
+            </ul>
+        </div>
+
+        <!-- Main Content -->
+        <main class="content">
+            <h1>JavaScript Explained</h1>
+
+            <!-- Chapter 1: Introduction -->
+            <section id="chapter1">
+                <h2>1. Introduction</h2>
+                <iframe src="https://www.youtube.com/embed/W6NZfCO5SIk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin"
+                    allowfullscreen></iframe>
+
+                <p id="sub1"><strong>1.1 What is JavaScript?</strong></p>
+                <p>JavaScript is a high-level, interpreted programming language that conforms to the ECMAScript specification. JavaScript has curly-bracket syntax, dynamic typing, prototype-based object-orientation, and first-class functions.</p>
+                <p>Alongside HTML and CSS, JavaScript is one of the core technologies of the World Wide Web. JavaScript enables interactive web pages and is an essential part of web applications. The vast majority of websites use it for client-side page
+                    behavior, and all major web browsers have a dedicated JavaScript engine to execute it.</p>
+                <p>As a multi-paradigm language, JavaScript supports event-driven, functional, and imperative programming styles. It has application programming interfaces (APIs) for working with text, dates, regular expressions, standard data structures,
+                    and the Document Object Model (DOM).</p>
+
+                <p id="sub2"><strong>1.2 Data Types</strong></p>
+                <p>JavaScript has several built-in data types that are used to define the operations possible on them and the storage method for each of them. The most fundamental data types in JavaScript include:</p>
+
+                <p>The basic data types in JavaScript are:</p>
+                <ol>
+                    <li>Number: Integers and floating-point numbers (e.g., 3, 3.14)</li>
+                    <li>String: Text enclosed in quotes (e.g., "Hello", 'JavaScript')</li>
+                    <li>Boolean: true or false values</li>
+                    <li>Undefined: A variable that has been declared but not assigned a value</li>
+                    <li>Null: Represents the intentional absence of any object value</li>
+                    <li>Symbol: A unique and immutable primitive value (ES6)</li>
+                    <li>BigInt: For integers of arbitrary length (ES2020)</li>
+                    <li>Object: Collections of related data</li>
+                </ol>
+
+                <p>JavaScript is dynamically typed, which means you don't need to declare the type of a variable when you create it. The interpreter automatically determines the type based on the assigned value.</p>
+
+                <p>Examples of basic data types in JavaScript:</p>
+                <pre class="span1">
+// JavaScript Data Types
+let age = 25;           // Number
+let name = "Alice";     // String
+let isStudent = true;   // Boolean
+let job = undefined;    // Undefined
+let salary = null;      // Null
+let id = Symbol("id"); // Symbol
+let bigNumber = 1234567890123456789012345n; // BigInt
+let person = {          // Object
+    firstName: "John",
+    lastName: "Doe"
+};
+
+// Checking types
+console.log(typeof age);       // "number"
+console.log(typeof name);      // "string"
+console.log(typeof isStudent); // "boolean"
+console.log(typeof job);       // "undefined"
+console.log(typeof salary);    // "object" (this is a known quirk in JavaScript)
+console.log(typeof id);        // "symbol"
+console.log(typeof bigNumber); // "bigint"
+console.log(typeof person);    // "object"
+                </pre>
+
+                <p id="sub3"><strong>1.3 Variables</strong></p>
+                <p>In JavaScript, variables are containers for storing data values. There are three ways to declare variables in JavaScript:</p>
+
+                <pre class="span1">
+// Using var (function-scoped, older way)
+var x = 10;
+
+// Using let (block-scoped, introduced in ES6)
+let y = 20;
+
+// Using const (block-scoped, constant value, introduced in ES6)
+const z = 30;
+
+// Variable naming rules
+let camelCase = "This is the standard naming convention";
+let _privateVariable = "Starting with underscore is common for private variables";
+let $specialVariable = "Dollar sign is allowed";
+
+// Variables can change type in JavaScript
+let variable = 10;      // Number
+variable = "ten";       // Now it's a String
+variable = true;        // Now it's a Boolean
+
+// Multiple declarations
+let a = 1, b = 2, c = 3;
+                </pre>
+
+                <p>Key differences between var, let, and const:</p>
+                <ul>
+                    <li>var: Function-scoped, can be redeclared, hoisted</li>
+                    <li>let: Block-scoped, cannot be redeclared in the same scope, not hoisted</li>
+                    <li>const: Block-scoped, cannot be reassigned after declaration, not hoisted</li>
+                </ul>
+
+                <p id="sub4"><strong>1.4 Constants</strong></p>
+                <p>Constants in JavaScript are declared using the const keyword. Once a constant is assigned a value, it cannot be reassigned. However, if the constant is an object or array, its properties or elements can still be modified.</p>
+
+                <pre class="span1">
+// Declaring constants
+const PI = 3.14159;
+const MAX_USERS = 100;
+
+// This will cause an error
+// PI = 3.14;  // TypeError: Assignment to constant variable
+
+// However, for objects and arrays, the content can be modified
+const person = {
+    name: "John",
+    age: 30
+};
+
+// This is allowed
+person.age = 31;
+console.log(person);  // { name: "John", age: 31 }
+
+// But this is not allowed
+// person = { name: "Jane", age: 25 };  // TypeError: Assignment to constant variable
+
+// Same for arrays
+const numbers = [1, 2, 3];
+numbers.push(4);  // This is allowed
+console.log(numbers);  // [1, 2, 3, 4]
+
+// But this is not allowed
+// numbers = [5, 6, 7];  // TypeError: Assignment to constant variable
+                </pre>
+
+                <p id="sub5"><strong>1.5 Key Takeaways</strong></p>
+                <p>JavaScript is a versatile language with dynamic typing and multiple ways to declare variables. The following table summarizes the key concepts covered in this introduction:</p>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Concept</th>
+                            <th>Description</th>
+                            <th>Example</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Data Types</td>
+                            <td>JavaScript has 8 basic data types</td>
+                            <td><code>number, string, boolean, null, undefined, symbol, bigint, object</code></td>
+                        </tr>
+                        <tr>
+                            <td>Variable Declaration</td>
+                            <td>Three ways to declare variables</td>
+                            <td><code>var x = 10; let y = 20; const z = 30;</code></td>
+                        </tr>
+                        <tr>
+                            <td>Dynamic Typing</td>
+                            <td>Variables can change types</td>
+                            <td><code>let x = 10; x = "hello";</code></td>
+                        </tr>
+                        <tr>
+                            <td>Constants</td>
+                            <td>Values that cannot be reassigned</td>
+                            <td><code>const PI = 3.14159;</code></td>
+                        </tr>
+                        <tr>
+                            <td>Object Mutability</td>
+                            <td>Object properties can be changed even when declared with const</td>
+                            <td><code>const obj = {}; obj.prop = "value";</code></td>
+                        </tr>
+                        <tr>
+                            <td>Type Checking</td>
+                            <td>Use typeof operator to check types</td>
+                            <td><code>typeof "hello" // "string"</code></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <p>Understanding these fundamental concepts is crucial for mastering JavaScript. As you progress through this guide, you'll build on these basics to create more complex and powerful applications.</p>
+            </section>
+
+            <div class="btnquiz">
+                <button><a href="../quizzes/Javascript_quiz.html?section=1" class="quiz-btn">Basic Concepts Quiz</a></button>
+            </div>
+
+            <!-- Chapter 2: Basic Concepts -->
+            <section id="chapter2">
+                <h2>2. Basic Concepts</h2>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/hdI2bqOjy3c" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin"
+                    allowfullscreen></iframe>
+
+                <p id="subb1"><strong>2.1 Basic Structure of JavaScript</strong></p>
+                <p>JavaScript can be included in HTML documents in several ways:</p>
+                <ul>
+                    <li>Inline JavaScript - Directly in HTML elements using event attributes</li>
+                    <li>Internal JavaScript - Using the &lt;script&gt; tag in the HTML document</li>
+                    <li>External JavaScript - Linking to external .js files</li>
+                    <li>Modern JavaScript - Using modules with import/export statements</li>
+                </ul>
+
+                <p>Example: Writing Basic JavaScript</p>
+                <pre class="span1">
+// External JavaScript file (script.js)
+
+// 1. Variables and values
+let greeting = "Hello, World!";
+
+// 2. Functions
+function displayGreeting() {
+    console.log(greeting);
+}
+
+// 3. Event handling (when included in HTML)
+document.addEventListener("DOMContentLoaded", function() {
+    displayGreeting();
+    document.getElementById("demo").innerHTML = greeting;
+});
+                </pre>
+
+                <p>How to include JavaScript in HTML:</p>
+                <pre class="span1">
+&lt;!-- Inline JavaScript --&gt;
+&lt;button onclick="alert('Hello!')"&gt;Click Me&lt;/button&gt;
+
+&lt;!-- Internal JavaScript --&gt;
+&lt;script&gt;
+    console.log("This is internal JavaScript");
+&lt;/script&gt;
+
+&lt;!-- External JavaScript --&gt;
+&lt;script src="script.js"&gt;&lt;/script&gt;
+
+&lt;!-- Modern JavaScript with type="module" --&gt;
+&lt;script type="module" src="app.js"&gt;&lt;/script&gt;
+                </pre>
+
+                <p id="subb2"><strong>2.2 Variables and Data Types in JavaScript</strong></p>
+                <p>JavaScript has several data types that can be stored in variables. Understanding these types is essential for effective programming.</p>
+
+                <p>Common Data Types in JavaScript:</p>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Data Type</th>
+                            <th>Example</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><code>Number</code></td>
+                            <td><code>let age = 25;</code></td>
+                            <td>Integers and floating-point numbers</td>
+                        </tr>
+                        <tr>
+                            <td><code>String</code></td>
+                            <td><code>let name = "John";</code></td>
+                            <td>Text enclosed in quotes</td>
+                        </tr>
+                        <tr>
+                            <td><code>Boolean</code></td>
+                            <td><code>let isActive = true;</code></td>
+                            <td>true or false values</td>
+                        </tr>
+                        <tr>
+                            <td><code>Object</code></td>
+                            <td><code>let person = {name: "John", age: 30};</code></td>
+                            <td>Collection of key-value pairs</td>
+                        </tr>
+                        <tr>
+                            <td><code>Array</code></td>
+                            <td><code>let colors = ["red", "green", "blue"];</code></td>
+                            <td>Ordered collection of values</td>
+                        </tr>
+                        <tr>
+                            <td><code>Null</code></td>
+                            <td><code>let empty = null;</code></td>
+                            <td>Intentional absence of any value</td>
+                        </tr>
+                        <tr>
+                            <td><code>Undefined</code></td>
+                            <td><code>let notDefined;</code></td>
+                            <td>Variable declared but not assigned a value</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <p>Working with variables and data types:</p>
+                <pre class="span1">
+// Variable declarations
+let name = "John";
+let age = 30;
+let isEmployed = true;
+let hobbies = ["reading", "gaming", "coding"];
+let person = {
+    firstName: "John",
+    lastName: "Doe",
+    email: "john@example.com"
+};
+
+// Accessing and manipulating variables
+console.log(name);                  // "John"
+console.log(age + 5);               // 35
+console.log(hobbies[1]);            // "gaming"
+console.log(person.firstName);      // "John"
+
+// Type conversion
+let numStr = "42";
+let num = Number(numStr);           // Convert string to number
+let str = String(num);              // Convert number to string
+let bool = Boolean(num);            // Convert to boolean (0 is false, other numbers are true)
+
+// Checking types
+console.log(typeof name);           // "string"
+console.log(typeof age);            // "number"
+console.log(typeof isEmployed);     // "boolean"
+console.log(typeof hobbies);        // "object" (arrays are objects in JavaScript)
+console.log(Array.isArray(hobbies)); // true (specific check for arrays)
+                </pre>
+
+                <p id="subb3"><strong>2.3 Operators in JavaScript</strong></p>
+                <p>JavaScript includes arithmetic, comparison, logical, and assignment operators for performing operations on variables.</p>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Operator</th>
+                            <th>Example</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><code>+</code></td>
+                            <td><code>x + y</code></td>
+                            <td>Addition (also used for string concatenation)</td>
+                        </tr>
+                        <tr>
+                            <td><code>-</code></td>
+                            <td><code>x - y</code></td>
+                            <td>Subtraction</td>
+                        </tr>
+                        <tr>
+                            <td><code>*</code></td>
+                            <td><code>x * y</code></td>
+                            <td>Multiplication</td>
+                        </tr>
+                        <tr>
+                            <td><code>/</code></td>
+                            <td><code>x / y</code></td>
+                            <td>Division</td>
+                        </tr>
+                        <tr>
+                            <td><code>%</code></td>
+                            <td><code>x % y</code></td>
+                            <td>Modulus (Remainder)</td>
+                        </tr>
+                        <tr>
+                            <td><code>**</code></td>
+                            <td><code>x ** y</code></td>
+                            <td>Exponentiation (ES2016)</td>
+                        </tr>
+                        <tr>
+                            <td><code>==</code></td>
+                            <td><code>x == y</code></td>
+                            <td>Equal to (value)</td>
+                        </tr>
+                        <tr>
+                            <td><code>===</code></td>
+                            <td><code>x === y</code></td>
+                            <td>Equal to (value and type)</td>
+                        </tr>
+                        <tr>
+                            <td><code>!=</code></td>
+                            <td><code>x != y</code></td>
+                            <td>Not equal to (value)</td>
+                        </tr>
+                        <tr>
+                            <td><code>!==</code></td>
+                            <td><code>x !== y</code></td>
+                            <td>Not equal to (value and type)</td>
+                        </tr>
+                        <tr>
+                            <td><code>&&</code></td>
+                            <td><code>x && y</code></td>
+                            <td>Logical AND</td>
+                        </tr>
+                        <tr>
+                            <td><code>||</code></td>
+                            <td><code>x || y</code></td>
+                            <td>Logical OR</td>
+                        </tr>
+                        <tr>
+                            <td><code>!</code></td>
+                            <td><code>!x</code></td>
+                            <td>Logical NOT</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <p>Example: Using Operators in JavaScript</p>
+                <pre class="span1">
+// Arithmetic operators
+let a = 10, b = 5;
+console.log("Sum: " + (a + b));         // 15
+console.log("Difference: " + (a - b));   // 5
+console.log("Product: " + (a * b));      // 50
+console.log("Quotient: " + (a / b));     // 2
+console.log("Remainder: " + (a % b));    // 0
+console.log("Power: " + (a ** b));       // 100000 (10^5)
+
+// Comparison operators
+console.log(a == "10");   // true (equal value)
+console.log(a === "10");  // false (not equal type)
+console.log(a != b);      // true
+console.log(a > b);       // true
+console.log(a <= b);      // false
+
+// Logical operators
+let isAdult = true;
+let hasLicense = false;
+console.log(isAdult && hasLicense);  // false (both must be true)
+console.log(isAdult || hasLicense);  // true (at least one is true)
+console.log(!isAdult);               // false (negation)
+
+// Assignment operators
+let x = 10;
+x += 5;  // x = x + 5
+console.log(x);  // 15
+
+x *= 2;  // x = x * 2
+console.log(x);  // 30
+                </pre>
+
+                <p id="subb4"><strong>2.4 Conditional Statements in JavaScript</strong></p>
+                <p>JavaScript provides if, else, and switch statements to control the flow of execution.</p>
+
+                <p>1. if Statement<br>Executes a block of code if the condition is true.</p>
+                <pre class="span1">
+let age = 18;
+if (age >= 18) {
+    console.log("You are an adult.");
+}
+                </pre>
+
+                <p>2. if-else Statement<br>Executes one block if true, another if false.</p>
+                <pre class="span1">
+let num = 10;
+if (num % 2 === 0) {
+    console.log("Even number");
+} else {
+    console.log("Odd number");
+}
+                </pre>
+
+                <p>3. if-else if-else Statement<br>Checks multiple conditions in sequence.</p>
+                <pre class="span1">
+let score = 85;
+
+if (score >= 90) {
+    console.log("Grade: A");
+} else if (score >= 80) {
+    console.log("Grade: B");
+} else if (score >= 70) {
+    console.log("Grade: C");
+} else {
+    console.log("Grade: F");
+}
+                </pre>
+
+                <p>4. switch Statement<br>Used when you have multiple conditions for a single variable.</p>
+                <pre class="span1">
+let day = 3;
+let dayName;
+
+switch (day) {
+    case 1:
+        dayName = "Monday";
+        break;
+    case 2:
+        dayName = "Tuesday";
+        break;
+    case 3:
+        dayName = "Wednesday";
+        break;
+    case 4:
+        dayName = "Thursday";
+        break;
+    case 5:
+        dayName = "Friday";
+        break;
+    case 6:
+        dayName = "Saturday";
+        break;
+    case 7:
+        dayName = "Sunday";
+        break;
+    default:
+        dayName = "Invalid day";
+}
+
+console.log("Today is " + dayName);
+                </pre>
+
+                <p>5. Ternary Operator<br>A shorthand for simple if-else statements.</p>
+                <pre class="span1">
+let age = 20;
+let status = (age >= 18) ? "Adult" : "Minor";
+console.log(status);  // "Adult"
+                </pre>
+
+                <p>6. Loops in JavaScript<br>Loops are used to execute a block of code multiple times.</p>
+
+                <p>6.1 for Loop<br>Executes code a fixed number of times.</p>
+                <pre class="span1">
+for (let i = 1; i <= 5; i++) {
+    console.log("Iteration: " + i);
+}
+                </pre>
+
+                <p>6.2 while Loop<br>Executes code while a condition is true.</p>
+                <pre class="span1">
+let i = 1;
+while (i <= 5) {
+    console.log("Iteration: " + i);
+    i++;
+}
+                </pre>
+
+                <p>6.3 do-while Loop<br>Executes code at least once, then repeats while the condition is true.</p>
+                <pre class="span1">
+let i = 1;
+do {
+    console.log("Iteration: " + i);
+    i++;
+} while (i <= 5);
+                </pre>
+
+                <p>6.4 for...of Loop<br>Iterates over iterable objects like arrays.</p>
+                <pre class="span1">
+let colors = ["red", "green", "blue"];
+for (let color of colors) {
+    console.log(color);
+}
+                </pre>
+
+                <p>6.5 for...in Loop<br>Iterates over the properties of an object.</p>
+                <pre class="span1">
+let person = {name: "John", age: 30, job: "Developer"};
+for (let key in person) {
+    console.log(key + ": " + person[key]);
+}
+                </pre>
+            </section>
+
+            <div class="btnquiz">
+                <button><a href="../quizzes/Javascript_quiz.html?section=2" class="quiz-btn">Basic Concepts Quiz</a></button>
+            </div>
+
+            <!-- Chapter 3: Functions -->
+            <section id="chapter3">
+                <h2>3. Functions</h2>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/xUI5Tsl2JpY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin"
+                    allowfullscreen></iframe>
+
+                <p id="subbb1"><strong>3.1 Functions</strong></p>
+                <p>Functions in JavaScript are blocks of code designed to perform a particular task. They are executed when they are called (invoked).</p>
+
+                <pre class="span1">
+// Function declaration
+function greet(name) {
+    console.log("Hello, " + name + "!");
+}
+
+// Function call
+greet("Alice");  // Output: Hello, Alice!
+                </pre>
+
+                <p id="subbb2"><strong>3.2 Function Parameters</strong></p>
+                <p>Functions can take parameters, which are values passed to the function when it is called.</p>
+
+                <pre class="span1">
+// Function with multiple parameters
+function addNumbers(a, b) {
+    return a + b;
+}
+
+// Function call with arguments
+let sum = addNumbers(5, 3);  // sum = 8
+console.log(sum);
+
+// Parameters vs. Arguments
+// - Parameters: Variables listed in function definition (a, b)
+// - Arguments: Actual values passed to the function (5, 3)
+                </pre>
+
+                <p id="subbb3"><strong>3.3 Function Calls</strong></p>
+                <p>Functions are called (invoked) using the function name followed by parentheses containing any arguments.</p>
+
+                <pre class="span1">
+// Defining a function to calculate area
+function calculateArea(width, height) {
+    return width * height;
+}
+
+// Different ways to call functions
+let area1 = calculateArea(5, 10);           // Direct values
+console.log(area1);  // 50
+
+let width = 6, height = 8;
+let area2 = calculateArea(width, height);    // Variables as arguments
+console.log(area2);  // 48
+
+// Using function results in expressions
+let totalArea = calculateArea(5, 10) + calculateArea(6, 8);
+console.log(totalArea);  // 98
+
+// Nested function calls
+let radius = 5;
+let circleArea = calculateArea(radius, radius) * Math.PI;
+console.log(circleArea.toFixed(2));  // 78.54
+                </pre>
+
+                <p>Function calls can be used in expressions, assigned to variables, passed as arguments to other functions, and more. This flexibility is a powerful feature of JavaScript.</p>
+
+                <p id="subbb5"><strong>3.4 Types of Functions</strong></p>
+                <p>JavaScript supports several ways to define and use functions.</p>
+
+                <pre class="span1">
+// 1. Function Declaration
+function sayHello() {
+    console.log("Hello!");
+}
+
+// 2. Function Expression
+const greet = function() {
+    console.log("Greetings!");
+};
+
+// 3. Arrow Function (ES6)
+const welcome = () => {
+    console.log("Welcome!");
+};
+
+// 4. Immediately Invoked Function Expression (IIFE)
+(function() {
+    console.log("This runs immediately!");
+})();
+
+// 5. Method (Function as object property)
+const person = {
+    name: "John",
+    sayName: function() {
+        console.log(this.name);
+    }
+};
+
+// Calling different types of functions
+sayHello();        // Function declaration
+greet();           // Function expression
+welcome();         // Arrow function
+person.sayName();  // Method
+                </pre>
+
+                <p id="subbb6"><strong>3.5 Functions Without Parameters & Return</strong></p>
+                <p>A function that doesn't take input or return anything.</p>
+
+                <pre class="span1">
+// Function without parameters or return value
+function showMessage() {  
+    console.log("This is a simple message");
+}
+
+// Function call
+showMessage();
+                </pre>
+
+                <ul>
+                    <li>The function doesn't accept any parameters</li>
+                    <li>It performs an action (logging to console) but doesn't return a value</li>
+                    <li>Such functions are useful for tasks that don't need inputs or outputs</li>
+                </ul>
+
+                <p id="subbb7"><strong>3.6 Functions With Return Values</strong></p>
+                <p>Functions can return values using the return statement.</p>
+
+                <pre class="span1">
+// Function that returns a value
+function calculateArea(width, height) {  
+    return width * height;  
+}
+
+// Using the returned value
+let area = calculateArea(5, 3);  
+console.log("Area: " + area);  // Output: Area: 15
+
+// Early return
+function getGreeting(hour) {
+    if (hour < 12) {
+        return "Good morning";
+    } else if (hour < 18) {
+        return "Good afternoon";
+    } else {
+        return "Good evening";
+    }
+}
+
+console.log(getGreeting(9));   // "Good morning"
+console.log(getGreeting(14));  // "Good afternoon"
+console.log(getGreeting(20));  // "Good evening"
+                </pre>
+
+                <ul>
+                    <li>The return statement ends function execution and specifies a value to be returned</li>
+                    <li>Functions can have multiple return statements (but only one will execute)</li>
+                    <li>If no return statement is specified, the function returns undefined</li>
+                </ul>
+
+                <p id="subbb8"><strong>3.7 Default Parameters</strong></p>
+                <p>ES6 introduced default parameters, allowing parameters to have default values if no argument is provided.</p>
+
+                <pre class="span1">
+// Function with default parameters
+function greet(name = "Guest", greeting = "Hello") {
+    console.log(`${greeting}, ${name}!`);
+}
+
+// Different ways to call
+greet();                  // Output: Hello, Guest!
+greet("Alice");          // Output: Hello, Alice!
+greet("Bob", "Welcome"); // Output: Welcome, Bob!
+
+// Skipping parameters
+function createUser(name, role = "User", active = true) {
+    return {
+        name: name,
+        role: role,
+        isActive: active
+    };
+}
+
+// To skip the middle parameter but provide the third
+let user = createUser("Alice", undefined, false);
+console.log(user);  // {name: "Alice", role: "User", isActive: false}
+                </pre>
+
+                <ul>
+                    <li>Default parameters are used when arguments are undefined or omitted</li>
+                    <li>They make functions more flexible and reduce the need for conditional logic</li>
+                    <li>You can use expressions as default values, including function calls</li>
+                </ul>
+
+                <p id="subbb9"><strong>3.8 Arrow Functions</strong></p>
+                <p>Arrow functions provide a concise syntax for writing functions in JavaScript (introduced in ES6).</p>
+
+                <pre class="span1">
+// Traditional function expression
+const add = function(a, b) {
+    return a + b;
+};
+
+// Arrow function equivalent
+const addArrow = (a, b) => {
+    return a + b;
+};
+
+// Even shorter for single expressions (implicit return)
+const addShort = (a, b) => a + b;
+
+// Arrow function with single parameter (parentheses optional)
+const square = x => x * x;
+
+// Arrow function with no parameters
+const sayHello = () => "Hello!";
+
+// Using arrow functions
+console.log(addArrow(5, 3));  // 8
+console.log(addShort(5, 3));   // 8
+console.log(square(4));        // 16
+console.log(sayHello());       // "Hello!"
+                </pre>
+
+                <p>Key differences between arrow functions and regular functions:</p>
+                <ul>
+                    <li>Arrow functions don't have their own this binding</li>
+                    <li>They cannot be used as constructors (no new keyword)</li>
+                    <li>They don't have arguments object</li>
+                    <li>They have implicit return when the body is a single expression</li>
+                </ul>
+
+                <p id="subbb10"><strong>3.9 Function Scope</strong></p>
+                <p>Variables defined inside a function are not accessible from outside the function. This is known as function scope.</p>
+
+                <pre class="span1">
+// Global scope
+let globalVar = "I'm global";
+
+function exampleFunction() {
+    // Function scope
+    let localVar = "I'm local";
+    console.log(globalVar);  // Can access global variables
+    console.log(localVar);   // Can access local variables
+    
+    // Nested function
+    function nestedFunction() {
+        let nestedVar = "I'm nested";
+        console.log(globalVar);  // Can access global variables
+        console.log(localVar);   // Can access parent function variables
+        console.log(nestedVar);  // Can access its own variables
+    }
+    
+    nestedFunction();
+    // console.log(nestedVar);  // Error: nestedVar is not defined
+}
+
+exampleFunction();
+console.log(globalVar);    // Works: globalVar is global
+// console.log(localVar);  // Error: localVar is not defined
+
+// Block scope (let and const)
+if (true) {
+    let blockVar = "I'm in a block";
+    const FIXED_VALUE = 100;
+    var oldVar = "I use var";
+}
+
+// console.log(blockVar);     // Error: blockVar is not defined
+// console.log(FIXED_VALUE);  // Error: FIXED_VALUE is not defined
+console.log(oldVar);        // Works: var is function-scoped, not block-scoped
+                </pre>
+
+                <p>Understanding scope is crucial for writing maintainable JavaScript code and avoiding unexpected behavior.</p>
+            </section>
+
+            <div class="btnquiz">
+                <button><a href="../quizzes/Javascript_quiz.html?section=3" class="quiz-btn">Functions Quiz</a></button>
+            </div>
+        </main>
+    </div>
+
+    <!-- Scripts -->
+    <script src="../../../scripts/preloader.js"></script>
+    <script>
+        function togglemenu(menuid) {
+            let menu = document.getElementById(menuid);
+            if (menu.style.display === "none" || menu.style.display === "") {
+                document.querySelectorAll('.sup').forEach(m => m.style.display = "none");
+                menu.style.display = "block";
+            } else {
+                menu.style.display = "none";
+            }
+        }
+    </script>
+    <script>
+        document.getElementById("togglesidebar").addEventListener("click", function() {
+            let sidebar = document.querySelector(".sidebar");
+            let content = document.querySelector(".content");
+            if (sidebar.classList.contains("closed")) {
+                sidebar.classList.remove("closed");
+                content.classList.remove("shifted");
+            } else {
+                sidebar.classList.add("closed");
+                content.classList.add("shifted");
+            }
+        });
+    </script>
+    <script>
+        window.addEventListener("scroll", function() {
+            const navbar = document.getElementById("navbar");
+            if (window.scrollY > 100) {
+                navbar.classList.add("navbar");
+            } else {
+                navbar.classList.remove("navbar");
+            }
+        });
+    </script>
+    <script src="../../../scripts/Login_button.js">
+    </script>
+</body>
+
+</html>

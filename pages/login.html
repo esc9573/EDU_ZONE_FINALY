@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="../styles/login.css">
+    <link rel="stylesheet" href="../components/navbar.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <title>Login | EduZone</title>
+</head>
+
+<body>
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="spinner"></div>
+    </div>
+
+    <!-- Navbar -->
+    <nav id="navbar">
+        <div class="nav-logo">
+            <a href="/home.html"><img src="../assets/images/home-images/logo.png"></a>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="main">
+        <form action="../pages/home.html">
+            <h1>Login</h1>
+            <p class="p1">Continue your wonderful journey with learn content</p>
+
+            <div class="input_ground">
+                <i class="fas fa-envelope"></i>
+                <input type="email" name="gmail" required placeholder="Email" autocomplete="email">
+            </div>
+
+            <div class="input_ground">
+                <i class="fas fa-lock"></i>
+                <input type="password" name="password" required placeholder="Password" autocomplete="current-password">
+                <i class="icon-password fa-solid fa-eye toggle-password" onclick="togglePassword('password')"></i>
+            </div>
+
+            <div class="regist">
+                <a href="./reset-password.html">Forgot password?</a>
+            </div>
+
+            <button type="submit">
+                <i class="fas fa-sign-in-alt"></i> Login
+            </button>
+
+            <p class="p2">Don't have an account? <a href="./sign-up.html">Sign Up</a></p>
+        </form>
+        <img src="../assets/images/home-images/login-image.jpg" alt="Login Background">
+    </div>
+
+    <!-- Preloader Script -->
+    <script src="../scripts/preloader.js"></script>
+    <script src="../scripts/password.js"></script>
+</body>
+
+</html>

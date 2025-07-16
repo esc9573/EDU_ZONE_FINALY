@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="../Assets/Images/favicon.ico" type="image/x-icon">
+    <!-- Links -->
+    <link rel="stylesheet" href="../styles/sign-up.css">
+    <link rel="stylesheet" href="../components/navbar.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <title>Sign up | EduZone</title>
+</head>
+
+<body>
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="spinner"></div>
+    </div>
+
+    <!-- Navbar -->
+    <nav id="navbar">
+        <div class="nav-logo">
+            <a href="./home.html"><img src="../assets/images/home-images/logo.png" alt="EduZone Logo"></a>
+        </div>
+    </nav>
+
+    <form action="../php/sign.php" method="POST">
+        <div class="signup">
+            <div class="left">
+                <h1>Sign Up</h1>
+                <p>Let's Start wonderful journey with learn content</p>
+
+                <div class="input_ground">
+                    <i class="fas fa-user"></i>
+                    <input type="text" name="name" placeholder="Full name" required>
+                </div>
+
+                <div class="input_ground">
+                    <i class="fas fa-envelope"></i>
+                    <input type="email" name="gmail" placeholder="Email" required>
+                </div>
+
+                <div class="input_ground password">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" id="password" name="password" required placeholder="Password">
+                    <i class="icon-password fa-solid fa-eye toggle-password" onclick="togglePassword('password')"></i>
+                </div>
+
+                <div class="password-strength">
+                    <div class="strength-meter">
+                        <div class="strength-bar"></div>
+                    </div>
+                    <div class="strength-text">Password Strength</div>
+                </div>
+
+                <div class="input_ground password">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" id="confirm-password" name="confirm_password" required placeholder="Confirm Password">
+                    <i class="icon-password fa-solid fa-eye toggle-password" onclick="togglePassword('confirm-password')"></i>
+                </div>
+
+                <div class="password-requirements">
+                    <p><i class="fa-solid fa-circle-check"></i> At least 8 characters</p>
+                    <p><i class="fa-solid fa-circle-check"></i> At least a number (0-9) or a symbol</p>
+                    <p><i class="fa-solid fa-circle-check"></i> Lowercase (a-z) and uppercase (A-Z)</p>
+                </div>
+
+                <button type="submit" class="signup-btn">
+                    <i class="fas fa-user-plus"></i> Sign Up
+                </button>
+
+                <div class="social-login">
+                    <p>Or sign up with</p>
+                    <a href="#" class="google-btn"><i class="fa-brands fa-google"></i></a>
+                </div>
+
+                <p class="login-link">Already have an account? <a href="./Login.html">Login</a></p>
+            </div>
+            <div class="right">
+                <img src="../assets/images/home-images/signUP-image.png" alt="Sign Up Illustration" style="transform: scaleX(-1);">
+            </div>
+        </div>
+    </form>
+
+    <!-- Preloader Script -->
+    <script src="../scripts/preloader.js"></script>
+    <script src="../scripts/password.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../../components/quizzes.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>MCQ Quiz - C++</title>
+</head>
+
+<body>
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="spinner"></div>
+    </div>
+
+    <!-- Quiz Header -->
+    <div class="quiz-header">
+        <div class="quiz-header-content">
+            <h1>C++ Programming Quiz</h1>
+            <p>Test your knowledge of C++ programming concepts with this comprehensive quiz covering basic to advanced topics.</p>
+            <div class="quiz-stats">
+                <div class="stat">
+                    <i class="fas fa-question-circle"></i>
+                    <span>20 Questions</span>
+                </div>
+                <div class="stat">
+                    <i class="fas fa-clock"></i>
+                    <span>30 Minutes</span>
+                </div>
+                <div class="stat">
+                    <i class="fas fa-trophy"></i>
+                    <span>Certificate Available</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="quiz-container">
+        <!-- Section Indicator -->
+        <div class="section-indicator" id="sectionIndicator">Basic Concepts</div>
+
+        <!-- Quiz Instructions -->
+        <div class="quiz-instructions">
+            <h3><i class="fas fa-info-circle"></i> Instructions</h3>
+            <ul>
+                <li>Read each question carefully before selecting an answer</li>
+                <li>Each question has only one correct answer</li>
+                <li>You can navigate between sections using the buttons at the bottom</li>
+                <li>Click "Check Answers" to see your score for each section</li>
+            </ul>
+        </div>
+
+        <!-- Timer -->
+        <div class="timer">
+            <i class="fas fa-clock"></i>
+            <span id="timeLeft">30:00</span>
+        </div>
+
+        <!-- Section 1 (Questions 1-7) -->
+        <div class="quiz-section" id="section1">
+            <h2 class="section-title">Basic Concepts (Questions 1-7)</h2>
+
+            <!-- Question 1 -->
+            <div class="question">
+                <p>1. What is C++?</p>
+                <div class="options">
+                    <label><input type="radio" name="q1" value="a"><span>A scripting language</span></label>
+                    <label><input type="radio" name="q1" value="b"><span>An object-oriented programming language</span></label>
+                    <label><input type="radio" name="q1" value="c"><span>A markup language</span></label>
+                </div>
+            </div>
+
+            <!-- Question 2 -->
+            <div class="question">
+                <p>2. What is the output of the following code?</p>
+                <pre class="code-block">#include &lt;iostream&gt;
+using namespace std;
+int main() {
+    cout << "Hello, World!";
+    return 0;
+}</pre>
+                <div class="options">
+                    <label><input type="radio" name="q2" value="a"><span>Hello</span></label>
+                    <label><input type="radio" name="q2" value="b"><span>World!</span></label>
+                    <label><input type="radio" name="q2" value="c"><span>Hello, World!</span></label>
+                </div>
+            </div>
+
+            <!-- Question 3 -->
+            <div class="question">
+                <p>3. Which keyword is used to define a variable in C++?</p>
+                <div class="options">
+                    <label><input type="radio" name="q3" value="a"><span>var</span></label>
+                    <label><input type="radio" name="q3" value="b"><span>int</span></label>
+                    <label><input type="radio" name="q3" value="c"><span>variable</span></label>
+                </div>
+            </div>
+
+            <!-- Question 4 -->
+            <div class="question">
+                <p>4. What is the correct syntax to include the iostream library in C++?</p>
+                <div class="options">
+                    <label><input type="radio" name="q4" value="a"><span>#include &lt;iostream&gt;</span></label>
+                    <label><input type="radio" name="q4" value="b"><span>#include iostream</span></label>
+                    <label><input type="radio" name="q4" value="c"><span>#include "iostream"</span></label>
+                </div>
+            </div>
+
+            <!-- Question 5 -->
+            <div class="question">
+                <p>5. What is the output of the following code?</p>
+                <pre class="code-block">#include &lt;iostream&gt;
+using namespace std;
+int main() {
+    int x = 5;
+    cout << x++;
+    return 0;
+}</pre>
+                <div class="options">
+                    <label><input type="radio" name="q5" value="a"><span>5</span></label>
+                    <label><input type="radio" name="q5" value="b"><span>6</span></label>
+                    <label><input type="radio" name="q5" value="c"><span>4</span></label>
+                </div>
+            </div>
+
+            <!-- Question 6 -->
+            <div class="question">
+                <p>6. Which of the following is used to create a single-line comment in C++?</p>
+                <div class="options">
+                    <label><input type="radio" name="q6" value="a"><span>//</span></label>
+                    <label><input type="radio" name="q6" value="b"><span>/* */</span></label>
+                    <label><input type="radio" name="q6" value="c"><span>#</span></label>
+                </div>
+            </div>
+
+            <!-- Question 7 -->
+            <div class="question">
+                <p>7. What is the correct way to declare a function in C++?</p>
+                <div class="options">
+                    <label><input type="radio" name="q7" value="a"><span>function myFunction() {}</span></label>
+                    <label><input type="radio" name="q7" value="b"><span>void myFunction() {}</span></label>
+                    <label><input type="radio" name="q7" value="c"><span>def myFunction() {}</span></label>
+                </div>
+            </div>
+
+            <!-- Progress Bar -->
+            <div class="progress-container">
+                <div class="progress-bar" style="width: 35%;"></div>
+            </div>
+
+            <div class="navigation-buttons">
+                <button class="check-btn" onclick="checkSection(1)"><i class="fas fa-check-circle"></i> Check Answers</button>
+                <button class="next-btn" onclick="if(checkSection(1)) showSection(2)"><i class="fas fa-arrow-right"></i> Next Section</button>
+            </div>
+
+            <div class="result" id="result1"></div>
+            <div class="incorrect" id="incorrect1"></div>
+        </div>
+
+        <!-- Section 2 (Questions 8-14) -->
+        <div class="quiz-section" id="section2">
+            <h2 class="section-title">Control Structures & Arrays (Questions 8-14)</h2>
+
+            <!-- Question 8 -->
+            <div class="question">
+                <p>8. What is the output of the following code?</p>
+                <pre class="code-block">#include &lt;iostream&gt;
+using namespace std;
+int main() {
+    int x = 10;
+    if (x > 5) {
+        cout << "Yes";
+    } else {
+        cout << "No";
+    }
+    return 0;
+}</pre>
+                <div class="options">
+                    <label><input type="radio" name="q8" value="a"><span>Yes</span></label>
+                    <label><input type="radio" name="q8" value="b"><span>No</span></label>
+                    <label><input type="radio" name="q8" value="c"><span>Error</span></label>
+                </div>
+            </div>
+
+            <!-- Question 9 -->
+            <div class="question">
+                <p>9. Which of the following is used to create a loop in C++?</p>
+                <div class="options">
+                    <label><input type="radio" name="q9" value="a"><span>for</span></label>
+                    <label><input type="radio" name="q9" value="b"><span>loop</span></label>
+                    <label><input type="radio" name="q9" value="c"><span>repeat</span></label>
+                </div>
+            </div>
+
+            <!-- Question 10 -->
+            <div class="question">
+                <p>10. What is the output of the following code?</p>
+                <pre class="code-block">#include &lt;iostream&gt;
+using namespace std;
+int main() {
+    int x = 0;
+    while (x < 3) {
+        cout << x;
+        x++;
+    }
+    return 0;
+}</pre>
+                <div class="options">
+                    <label><input type="radio" name="q10" value="a"><span>012</span></label>
+                    <label><input type="radio" name="q10" value="b"><span>123</span></label>
+                    <label><input type="radio" name="q10" value="c"><span>0123</span></label>
+                </div>
+            </div>
+
+            <!-- Question 11 -->
+            <div class="question">
+                <p>11. Which of the following is used to create an array in C++?</p>
+                <div class="options">
+                    <label><input type="radio" name="q11" value="a"><span>array</span></label>
+                    <label><input type="radio" name="q11" value="b"><span>[]</span></label>
+                    <label><input type="radio" name="q11" value="c"><span>list</span></label>
+                </div>
+            </div>
+
+            <!-- Question 12 -->
+            <div class="question">
+                <p>12. What is the output of the following code?</p>
+                <pre class="code-block">#include &lt;iostream&gt;
+using namespace std;
+int main() {
+    int arr[3] = {1, 2, 3};
+    cout << arr[1];
+    return 0;
+}</pre>
+                <div class="options">
+                    <label><input type="radio" name="q12" value="a"><span>1</span></label>
+                    <label><input type="radio" name="q12" value="b"><span>2</span></label>
+                    <label><input type="radio" name="q12" value="c"><span>3</span></label>
+                </div>
+            </div>
+
+            <!-- Question 13 -->
+            <div class="question">
+                <p>13. Which of the following is used to create a pointer in C++?</p>
+                <div class="options">
+                    <label><input type="radio" name="q13" value="a"><span>*</span></label>
+                    <label><input type="radio" name="q13" value="b"><span>&</span></label>
+                    <label><input type="radio" name="q13" value="c"><span>ptr</span></label>
+                </div>
+            </div>
+
+            <!-- Question 14 -->
+            <div class="question">
+                <p>14. What is the output of the following code?</p>
+                <pre class="code-block">#include &lt;iostream&gt;
+using namespace std;
+int main() {
+    int x = 5;
+    int *ptr = &x;
+    cout << *ptr;
+    return 0;
+}</pre>
+                <div class="options">
+                    <label><input type="radio" name="q14" value="a"><span>5</span></label>
+                    <label><input type="radio" name="q14" value="b"><span>Address of x</span></label>
+                    <label><input type="radio" name="q14" value="c"><span>Error</span></label>
+                </div>
+            </div>
+
+            <!-- Progress Bar -->
+            <div class="progress-container">
+                <div class="progress-bar" style="width: 70%;"></div>
+            </div>
+
+            <div class="navigation-buttons">
+                <button class="prev-btn" onclick="showSection(1)"><i class="fas fa-arrow-left"></i> Previous Section</button>
+                <button class="check-btn" onclick="checkSection(2)"><i class="fas fa-check-circle"></i> Check Answers</button>
+                <button class="next-btn" onclick="if(checkSection(2)) showSection(3)"><i class="fas fa-arrow-right"></i> Next Section</button>
+            </div>
+
+            <div class="result" id="result2"></div>
+            <div class="incorrect" id="incorrect2"></div>
+        </div>
+
+        <!-- Section 3 (Questions 15-20) -->
+        <div class="quiz-section" id="section3">
+            <h2 class="section-title">Advanced Concepts (Questions 15-20)</h2>
+
+            <!-- Question 15 -->
+            <div class="question">
+                <p>15. Which of the following is used to create a reference in C++?</p>
+                <div class="options">
+                    <label><input type="radio" name="q15" value="a"><span>&</span></label>
+                    <label><input type="radio" name="q15" value="b"><span>*</span></label>
+                    <label><input type="radio" name="q15" value="c"><span>ref</span></label>
+                </div>
+            </div>
+
+            <!-- Question 16 -->
+            <div class="question">
+                <p>16. What is the output of the following code?</p>
+                <pre class="code-block">#include &lt;iostream&gt;
+using namespace std;
+int main() {
+    int x = 10;
+    int &ref = x;
+    ref = 20;
+    cout << x;
+    return 0;
+}</pre>
+                <div class="options">
+                    <label><input type="radio" name="q16" value="a"><span>10</span></label>
+                    <label><input type="radio" name="q16" value="b"><span>20</span></label>
+                    <label><input type="radio" name="q16" value="c"><span>Error</span></label>
+                </div>
+            </div>
+
+            <!-- Question 17 -->
+            <div class="question">
+                <p>17. Which of the following is used to create a class in C++?</p>
+                <div class="options">
+                    <label><input type="radio" name="q17" value="a"><span>class</span></label>
+                    <label><input type="radio" name="q17" value="b"><span>struct</span></label>
+                    <label><input type="radio" name="q17" value="c"><span>object</span></label>
+                </div>
+            </div>
+
+            <!-- Question 18 -->
+            <div class="question">
+                <p>18. What is the output of the following code?</p>
+                <pre class="code-block">#include &lt;iostream&gt;
+using namespace std;
+int main() {
+    int x = 10;
+    int y = 20;
+    cout << (x > y ? x : y);
+    return 0;
+}</pre>
+                <div class="options">
+                    <label><input type="radio" name="q18" value="a"><span>10</span></label>
+                    <label><input type="radio" name="q18" value="b"><span>20</span></label>
+                    <label><input type="radio" name="q18" value="c"><span>Error</span></label>
+                </div>
+            </div>
+
+            <!-- Question 19 -->
+            <div class="question">
+                <p>19. Which of the following is used to create an object in C++?</p>
+                <div class="options">
+                    <label><input type="radio" name="q19" value="a"><span>new</span></label>
+                    <label><input type="radio" name="q19" value="b"><span>object</span></label>
+                    <label><input type="radio" name="q19" value="c"><span>create</span></label>
+                </div>
+            </div>
+
+            <!-- Question 20 -->
+            <div class="question">
+                <p>20. What is the output of the following code?</p>
+                <pre class="code-block">#include &lt;iostream&gt;
+using namespace std;
+int main() {
+    int x = 5;
+    int y = 2;
+    cout << x / y;
+    return 0;
+}</pre>
+                <div class="options">
+                    <label><input type="radio" name="q20" value="a"><span>2</span></label>
+                    <label><input type="radio" name="q20" value="b"><span>2.5</span></label>
+                    <label><input type="radio" name="q20" value="c"><span>Error</span></label>
+                </div>
+            </div>
+
+            <!-- Progress Bar -->
+            <div class="progress-container">
+                <div class="progress-bar" style="width: 100%;"></div>
+            </div>
+
+            <div class="navigation-buttons">
+                <button class="prev-btn" onclick="showSection(2)"><i class="fas fa-arrow-left"></i> Previous Section</button>
+                <button class="check-btn" onclick="checkSection(3)"><i class="fas fa-check-circle"></i> Check Answers</button>
+                <button class="finish-btn" onclick="showFinalResults()"><i class="fas fa-flag-checkered"></i> Finish Quiz</button>
+            </div>
+
+            <div class="result" id="result3"></div>
+            <div class="incorrect" id="incorrect3"></div>
+        </div>
+
+        <!-- Final Results Summary (Initially Hidden) -->
+        <div class="results-summary" id="finalResults" style="display: none;">
+            <h3>Quiz Completed!</h3>
+            <div class="score-container">
+                <div class="score-circle">
+                    <span id="scorePercent">0%</span>
+                </div>
+            </div>
+            <div class="stats-container">
+                <div class="stat-item">
+                    <i class="fas fa-check-circle correct-icon"></i>
+                    <span id="correctCount">0</span> Correct
+                </div>
+                <div class="stat-item">
+                    <i class="fas fa-times-circle incorrect-icon"></i>
+                    <span id="incorrectCount">0</span> Incorrect
+                </div>
+                <div class="stat-item">
+                    <i class="fas fa-question-circle unanswered-icon"></i>
+                    <span id="unansweredCount">0</span> Unanswered
+                </div>
+            </div>
+            <div class="results-message" id="resultsMessage"></div>
+            <div class="results-buttons">
+                <button class="retry-btn" onclick="location.reload()"><i class="fas fa-redo"></i> Retry Quiz</button>
+                <button class="courses-btn" onclick="window.location.href='../../../pages/courses-home.html'"><i class="fas fa-book"></i> Back to Courses</button>
+                <button class="certificate-btn" id="certificateBtn"><i class="fas fa-certificate"></i> Get Certificate</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Back to Top Button -->
+    <div class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
+    <!-- Confetti Container for Celebration -->
+    <div id="confettiContainer"></div>
+
+    <script>
+        const config = {
+            answers: {
+                q1: "b",
+                q2: "c",
+                q3: "b",
+                q4: "a",
+                q5: "a",
+                q6: "a",
+                q7: "b",
+                q8: "a",
+                q9: "a",
+                q10: "a",
+                q11: "b",
+                q12: "b",
+                q13: "a",
+                q14: "a",
+                q15: "a",
+                q16: "b",
+                q17: "a",
+                q18: "b",
+                q19: "a",
+                q20: "a"
+            },
+            sections: {
+                1: {
+                    s: 1,
+                    e: 7,
+                    t: "Basic Concepts"
+                },
+                2: {
+                    s: 8,
+                    e: 14,
+                    t: "Control Structures & Arrays"
+                },
+                3: {
+                    s: 15,
+                    e: 20,
+                    t: "Advanced Concepts"
+                }
+            },
+            minScore: 4
+        };
+
+        const el = {
+            title: document.getElementById("sectionIndicator"),
+            timer: document.getElementById("timeLeft"),
+            results: document.getElementById("finalResults"),
+            scorePercent: document.getElementById("scorePercent"),
+            correctCount: document.getElementById("correctCount"),
+            incorrectCount: document.getElementById("incorrectCount"),
+            message: document.getElementById("resultsMessage"),
+            backToTop: document.getElementById("backToTop"),
+            preloader: document.querySelector(".preloader")
+        };
+
+        function showSection(num) {
+            document.querySelectorAll(".quiz-section").forEach(s => s.style.display = "none");
+            document.getElementById(`section${num}`).style.display = "block";
+            el.title.textContent = config.sections[num].t;
+            scrollTo(0, 0);
+        }
+
+        function checkSection(num) {
+            const {
+                s,
+                e
+            } = config.sections[num];
+            let score = 0,
+                wrong = [];
+
+            for (let i = s; i <= e; i++) {
+                const answer = document.querySelector(`input[name="q${i}"]:checked`);
+                const correct = config.answers[`q${i}`];
+
+                if (answer) {
+                    answer.parentElement.classList.add(answer.value === correct ? "correct" : "incorrect");
+                    if (answer.value === correct) score++;
+                    else wrong.push(`Q${i}: إجابتك (${answer.value})، الصح (${correct})`);
+                } else {
+                    wrong.push(`Q${i}: لم يتم اختيار إجابة`);
+                }
+            }
+
+            document.getElementById(`result${num}`).innerHTML = `<h3>النتيجة: ${score}/${e - s + 1}</h3>`;
+            document.getElementById(`incorrect${num}`).innerHTML = wrong.length ? wrong.join("<br>") : "كل الإجابات صحيحة!";
+            if (score < config.minScore) {
+                alert(`لا يمكنك المتابعة. تحتاج ${config.minScore} إجابات صحيحة. نتيجتك: ${score}`);
+                return false;
+            }
+            return true;
+        }
+
+        function showFinal() {
+            let correct = 0,
+                incorrect = 0,
+                unanswered = 0;
+
+            for (const q in config.answers) {
+                const answer = document.querySelector(`input[name="${q}"]:checked`);
+                if (answer) {
+                    answer.value === config.answers[q] ? correct++ : incorrect++;
+                } else {
+                    unanswered++;
+                }
+            }
+
+            const percent = Math.round((correct / 20) * 100);
+            let msg = percent >= 90 ? "ممتاز!" :
+                percent >= 70 ? "جيد جداً!" :
+                percent >= 50 ? "جيد!" :
+                "تحتاج لمزيد من التدريب";
+
+            el.scorePercent.textContent = `${percent}%`;
+            el.correctCount.textContent = correct;
+            el.incorrectCount.textContent = incorrect;
+            el.message.innerHTML = `<h3>${msg}</h3>`;
+
+            document.querySelectorAll(".quiz-section").forEach(s => s.style.display = "none");
+            el.results.style.display = "block";
+
+            if (percent >= 90) launchConfetti();
+        }
+
+        function startTimer(seconds) {
+            const box = document.querySelector(".timer");
+            const interval = setInterval(() => {
+                if (seconds < 0) return clearInterval(interval), showFinal();
+
+                const mins = String(Math.floor(seconds / 60)).padStart(2, "0");
+                const secs = String(seconds % 60).padStart(2, "0");
+                el.timer.textContent = `${mins}:${secs}`;
+
+                if (seconds <= 300) box.classList.add("warning");
+                seconds--;
+            }, 1000);
+        }
+
+        function launchConfetti() {
+            const container = document.getElementById("confettiContainer");
+            const colors = ["#0559CF", "#FF6B00", "#28a745", "#dc3545", "#fff"];
+            for (let i = 0; i < 120; i++) {
+                const confetti = document.createElement("div");
+                confetti.className = "confetti";
+                confetti.style = `
+                left: ${Math.random() * 100}vw;
+                animation: ${Math.random() * 2 + 3}s fall linear ${Math.random() * 1.5}s;
+                background: ${colors[Math.floor(Math.random() * colors.length)]};
+                width: ${Math.random() * 8 + 6}px;
+                height: ${Math.random() * 8 + 6}px;
+                transform: rotate(${Math.random() * 360}deg)
+            `;
+                container.appendChild(confetti);
+            }
+            setTimeout(() => container.innerHTML = '', 7000);
+        }
+
+        window.addEventListener("load", () => {
+            el.preloader.style.display = "none";
+            const sec = new URLSearchParams(location.search).get("section") || 1;
+            showSection(sec);
+            startTimer(1800);
+        });
+
+        window.addEventListener("scroll", () => {
+            el.backToTop.classList.toggle("show", scrollY > 300);
+        });
+
+        el.backToTop.addEventListener("click", () => scrollTo({
+            top: 0,
+            behavior: "smooth"
+        }));
+    </script>
+
+</body>
+
+</html>

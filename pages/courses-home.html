@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="EduZone - An innovative learning platform that provides courses in various fields">
+
+    <!-- Links -->
+    <link rel="stylesheet" href="../styles/courses-home.css">
+    <link rel="stylesheet" href="../components/navbar.css">
+    <link rel="stylesheet" href="../components/footer.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <title>EduZone | Courses</title>
+</head>
+
+<body>
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="spinner"></div>
+    </div>
+
+    <!-- Back to Top Button -->
+    <div class="back-to-top" aria-label="Back to Top">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
+    <!-- Navbar -->
+    <nav id="navbar">
+        <div class="nav-logo">
+            <img src="../assets/images/home-images/logo.png" alt="EduZone Logo">
+        </div>
+        <div class="nav-links">
+            <a href="./home.html" class="nav-Home">Home</a>
+            <a href="./courses-home.html" class="nav-Courses active">Courses</a>
+            <a href="./quizzes-home.html" class="nav-Quizzes">Quizzes</a>
+            <a href="./support.html" class="nav-Support">Support</a>
+        </div>
+        <a href="../pages/profile.html">
+            <i class="fa-solid fa-user" id="userIcon" style="cursor: pointer;"></i>
+        </a>
+
+        <!-- Navbar Menu For Media Query 990px -->
+        <i class="fa-solid fa-bars menu-icon" aria-label="Open Menu"></i>
+        <div class="navbar-menu">
+            <i class="fa-solid fa-xmark close-btn" aria-label="Close Menu"></i>
+            <ul>
+                <li><a href="./home.html">Home</a></li>
+                <li><a href="./courses-home.html">Courses</a></li>
+                <li><a href="./quizzes-home.html">Quizzes</a></li>
+                <li><a href="./support.html">Support</a></li>
+            </ul>
+            <a href="../pages/profile.html">
+                <i class="fa-solid fa-user" id="userIcon" style="cursor: pointer;"></i>
+            </a>
+
+        </div>
+    </nav>
+
+    <!-- Courses Section -->
+    <section id="sec1" class="fade-in delay-1">
+        <div class="side">
+            <p class="p select" data-category="all">All Courses</p>
+            <p class="p" data-category="front-end">Front-end</p>
+            <p class="p" data-category="back-end">Back-end</p>
+            <p class="p" data-category="mobile">Mobile Application</p>
+            <p class="p" data-category="software">Software Engineering</p>
+            <p class="p" data-category="programming">Programming</p>
+        </div>
+        <div class="main">
+            <div class="search-container fade-in delay-2">
+                <input type="search" id="courseSearch" placeholder="Find Your Courses">
+                <button class="search-icon" id="searchButton" aria-label="Search">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+            </div>
+
+            <div class="content">
+                <!-- Spring Boot Course -->
+                <div class="box open" data-category="back-end">
+                    <img src="../assets/images/courses-covers/Java.jpeg" alt="Spring Boot Course">
+                    <div>
+                        <div>
+                            <h3><a href="./courses-home.html">Spring Boot: Mastering the Fundamentals</a></h3> <span>6h</span>
+                        </div>
+                        <p>Master dependency injection and database integration with Spring Boot and Spring Data JPA</p>
+                    </div>
+                </div>
+
+                <!-- Python Course -->
+                <div class="box open" data-category="programming">
+                    <img src="../assets/images/courses-covers/Python.jpeg" alt="Python Course">
+                    <div>
+                        <div>
+                            <h3><a href="./content/course-details/Python_course.html">Complete Python Mastery</a></h3> <span>12h</span>
+                        </div>
+                        <p>Everything you need to program in Python in one course (includes 3 real-world projects)</p>
+                    </div>
+                </div>
+
+                <!-- C++ Course -->
+                <div class="box open" data-category="programming">
+                    <img src="../assets/images/courses-covers/C++.jpeg" alt="C++ Course">
+                    <div>
+                        <div>
+                            <h3><a href="./content/course-details/C++_course.html">The Ultimate C++ Series</a></h3> <span>15h</span>
+                        </div>
+                        <p>Master Modern C++: Go from Novice to Professional. Everything you need to code in C++ in one bundle!</p>
+                    </div>
+                </div>
+
+                <!-- C Course -->
+                <div class="box open" data-category="programming">
+                    <img src="../assets/images/courses-covers/C.jpeg" C Course ">
+                    <div>
+                        <div>
+                            <h3><a href="./courses-home.html ">C Programming Fundamentals</a></h3> <span>10h</span>
+                        </div>
+                        <p>Learn the core concepts of C programming language from scratch with practical examples</p>
+                    </div>
+                </div>
+                
+                <!-- SQL Course -->
+                <div class="box open " data-category="back-end ">
+                    <img src="../assets/images/courses-covers/Sql.jpeg " alt="SQL Course ">
+                    <div>
+                        <div>
+                            <h3><a href="./courses-home.html ">Complete SQL Mastery</a></h3> <span>11h</span>
+                        </div>
+                        <p>Everything you need to design and query databases in one comprehensive course</p>
+                    </div>
+                </div>
+                
+                <!-- Next.js Course -->
+                <div class="box open " data-category="front-end ">
+                    <img src="../assets/images/courses-covers/Next_JS.jpeg " alt="Next.js Course ">
+                    <div>
+                        <div>
+                            <h3><a href="./courses-home.html ">The Ultimate Next.js Series</a></h3> <span>12h</span>
+                        </div>
+                        <p>Everything you need to build full-stack applications with Next.js 13+ (App Router) and TypeScript</p>
+                    </div>
+                </div>
+                
+                <!-- HTML & CSS Course -->
+                <div class="box open " data-category="front-end ">
+                    <img src="../assets/images/courses-covers/HTML&CSS.jpeg " alt="HTML & CSS Course ">
+                    <div>
+                        <div>
+                            <h3><a href="./courses-home.html ">The Ultimate HTML5 & CSS3 Series</a></h3> <span>14h</span>
+                        </div>
+                        <p>Everything you need to build fast and stunning websites with HTML5 and CSS3 in one bundle</p>
+                    </div>
+                </div>
+                
+                <!-- JavaScript Course -->
+                <div class="box open " data-category="front-end ">
+                    <img src="../assets/images/courses-covers/JS.jpeg "JavaScript Course">
+                    <div>
+                        <div>
+                            <h3><a href="./content/course-details/Javascript_course.html">The Ultimate Full-stack JavaScript Developer Bundle</a></h3> <span>50h</span>
+                        </div>
+                        <p>Master all the JavaScript skills you need to land a full-stack developer job</p>
+                    </div>
+                </div>
+
+                <!-- React Course -->
+                <div class="box open" data-category="front-end">
+                    <img src="../assets/images/courses-covers/React_js.jpeg" alt="React Course">
+                    <div>
+                        <div>
+                            <h3><a href="./courses-home.html">React 18 for Beginners</a></h3> <span>8h</span>
+                        </div>
+                        <p>A step-by-step guide to building web apps with React 18+ and TypeScript</p>
+                    </div>
+                </div>
+
+                <!-- Testing React Course -->
+                <div class="box open" data-category="front-end">
+                    <img src="../assets/images/courses-covers/Testing_react.jpeg" alt="Testing React Course">
+                    <div>
+                        <div>
+                            <h3><a href="./courses-home.html">Testing React Applications</a></h3> <span>7h</span>
+                        </div>
+                        <p>Learn how to write comprehensive tests for your React applications using Jest and React Testing Library</p>
+                    </div>
+                </div>
+
+                <!-- Data Structures & Algorithms Course -->
+                <div class="box open" data-category="programming">
+                    <img src="../assets/images/courses-covers/Data Structure Algorithms.jpeg" alt="Data Structures & Algorithms Course">
+                    <div>
+                        <div>
+                            <h3><a href="./courses-home.html">Data Structures & Algorithms Masterclass</a></h3> <span>20h</span>
+                        </div>
+                        <p>Master the most common data structures and algorithms with practical implementations</p>
+                    </div>
+                </div>
+
+                <!-- Django Course -->
+                <div class="box open" data-category="back-end">
+                    <img src="../assets/images/courses-covers/Django.jpeg" alt="Django Course">
+                    <div>
+                        <div>
+                            <h3><a href="./courses-home.html">Django Web Development Masterclass</a></h3> <span>16h</span>
+                        </div>
+                        <p>Build powerful web applications with Python's most popular web framework</p>
+                    </div>
+                </div>
+
+                <!-- Full Stack Course -->
+                <div class="box open" data-category="front-end back-end">
+                    <img src="../assets/images/courses-covers/Full_stack.jpeg" alt="Full Stack Course">
+                    <div>
+                        <div>
+                            <h3><a href="./courses-home.html">Complete Full Stack Development</a></h3> <span>40h</span>
+                        </div>
+                        <p>Become a full stack developer with this comprehensive course covering both frontend and backend technologies</p>
+                    </div>
+                </div>
+
+                <!-- Git Course -->
+                <div class="box open" data-category="software">
+                    <img src="../assets/images/courses-covers/Git.jpeg" alt="Git Course">
+                    <div>
+                        <div>
+                            <h3><a href="./courses-home.html">Git & GitHub Masterclass</a></h3> <span>5h</span>
+                        </div>
+                        <p>Master version control with Git and collaborate effectively using GitHub</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="item">
+            <img src="../assets/images/home-images/logo.png" alt="EduZone Logo">
+            <p>EduZone is an innovative learning<br> platform that provides courses in various <br> fields with continuous assessment and<br> personalized progress tracking. It<br> creates a dynamic and engaging<br> educational environment.</p>
+            <ul class="social-icons">
+                <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                <li><a href="#"><i class="fab fa-facebook"></i></a></li>
+                <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
+                <li><a href="#"><i class="fab fa-x-twitter"></i></a></li>
+                <li><a href="#"><i class="fab fa-google"></i></a></li>
+            </ul>
+        </div>
+        <div class="item">
+            <h3>EduZone</h3>
+            <ol>
+                <li><a href="./support.html">About Us</a></li>
+                <li><a href="./support.html">Services</a></li>
+                <li><a href="./support.html">Community</a></li>
+                <li><a href="./support.html">Todo list</a></li>
+            </ol>
+        </div>
+        <div class="item">
+            <h3>Support</h3>
+            <ol>
+                <li><a href="./support.html">Help</a></li>
+                <li><a href="./support.html">Tweet @us</a></li>
+                <li><a href="./support.html">Chat bot</a></li>
+                <li><a href="./support.html">Feedback</a></li>
+            </ol>
+        </div>
+        <div class="item">
+            <h3>Links</h3>
+            <ol>
+                <li><a href="./courses-home.html">Courses</a></li>
+                <li><a href="./quizzes-home.html">Quizzes</a></li>
+                <li><a href="./support.html">Support</a></li>
+            </ol>
+        </div>
+        <div class="item">
+            <h3>Contact us</h3>
+            <a href="mailto:support@mail.com"><i class="fas fa-envelope"></i> support@mail.com</a>
+        </div>
+    </footer>
+
+    <div class="copyright">
+        <div class="info">
+            Copyright © 2025 by EduZone - All rights reserved
+        </div>
+        <div class="info">
+            <a href="#">Privacy policy</a>
+            <a href="#">Terms of use</a>
+            <a href="#">Legal</a>
+            <a href="#">Site map</a>
+        </div>
+    </div>
+
+    <!-- Footer for media query -->
+    <div class="footer">
+        <div class="info">
+            <h2>Follow us on social media</h2>
+            <ul class="social-icons">
+                <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                <li><a href="#"><i class="fab fa-facebook"></i></a></li>
+                <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
+                <li><a href="#"><i class="fab fa-x-twitter"></i></a></li>
+                <li><a href="#"><i class="fab fa-google"></i></a></li>
+            </ul>
+        </div>
+
+        <div class="item">
+            <h3 class="footer-btn">EduZone <i class="fa-solid fa-arrow-down"></i></h3>
+            <ol>
+                <li><a href="./support.html">About Us</a></li>
+                <li><a href="./support.html">Services</a></li>
+                <li><a href="./home.html">Community</a></li>
+                <li><a href="./support.html">Todo list</a></li>
+            </ol>
+        </div>
+
+        <div class="item">
+            <h3 class="footer-btn">Support <i class="fa-solid fa-arrow-down"></i></h3>
+            <ol>
+                <li><a href="./support.html">Help</a></li>
+                <li><a href="./support.html">Tweet @us</a></li>
+                <li><a href="./support.html">Chat bot</a></li>
+                <li><a href="./support.html">Feedback</a></li>
+            </ol>
+        </div>
+
+        <div class="item">
+            <h3 class="footer-btn">Links <i class="fa-solid fa-arrow-down"></i></h3>
+            <ol>
+                <li><a href="./courses-home.html">Courses</a></li>
+                <li><a href="./quizzes-home.html">Quizzes</a></li>
+                <li><a href="./support.html">Support</a></li>
+            </ol>
+        </div>
+
+        <div class="item">
+            <h3 class="footer-btn">Contact us <i class="fa-solid fa-arrow-down"></i></h3>
+            <ol>
+                <li><a href="mailto:support@mail.com"><i class="fas fa-envelope" style="color: #0559CF;"></i> support@mail.com</a></li>
+            </ol>
+        </div>
+        <h4>Copyright © 2025 by EduZone - All rights reserved</h4>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="../scripts/navbar-menu.js"></script>
+    <script src="../scripts/preloader.js"></script>
+    <script src="../scripts/Courses.js"></script>
+    <script src="../scripts/search.js"></script>
+
+    <script>
+        // Navbar scroll effect
+        window.addEventListener("scroll", function() {
+            const navbar = document.getElementById("navbar");
+            if (window.scrollY > 100) {
+                navbar.classList.add("scrolled");
+            } else {
+                navbar.classList.remove("scrolled");
+            }
+        });
+
+        // Category filtering
+        document.addEventListener('DOMContentLoaded', function() {
+            const categoryButtons = document.querySelectorAll('.side .p');
+            const courseBoxes = document.querySelectorAll('.box');
+
+            categoryButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    // Remove 'select' class from all buttons
+                    categoryButtons.forEach(btn => btn.classList.remove("select"));
+
+                    // Add 'select' class to clicked button
+                    this.classList.add("select");
+
+                    // Get selected category
+                    const selectedCategory = this.getAttribute('data-category');
+
+                    courseBoxes.forEach(box => {
+                        const boxCategories = box.getAttribute('data-category').split(' ');
+
+                        // Hide all boxes first
+                        box.classList.remove("open");
+
+                        // Show boxes based on category
+                        if (selectedCategory === "all") {
+                            box.classList.add("open");
+                        } else if (boxCategories && boxCategories.includes(selectedCategory)) {
+                            box.classList.add("open");
+                        }
+                    });
+                });
+            });
+
+            // Add CSS for highlighted search results
+            const style = document.createElement('style');
+            style.textContent = `
+                .box.highlighted {
+                    border: 3px solid #FFD700 !important;
+                    box-shadow: 0 0 20px rgba(255, 215, 0, 0.5) !important;
+                    transform: translateY(-10px) !important;
+                }
+            `;
+            document.head.appendChild(style);
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="EduZone - An innovative learning platform that provides courses in various fields">
+
+    <!-- Links -->
+    <link rel="stylesheet" href="../styles/home.css">
+    <link rel="stylesheet" href="../components/navbar.css">
+    <link rel="stylesheet" href="../components/footer.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <title>EduZone | Home</title>
+</head>
+
+<body>
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="spinner"></div>
+    </div>
+
+    <!-- Back to Top Button -->
+    <div class="back-to-top" aria-label="Back to Top">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
+    <!-- Navbar -->
+    <nav id="navbar">
+        <div class="nav-logo">
+            <img src="../assets/images/home-images/logo.png" alt="EduZone Logo">
+        </div>
+        <div class="nav-links">
+            <a href="./home.html" class="nav-Home active">Home</a>
+            <a href="./courses-home.html" class="nav-Courses">Courses</a>
+            <a href="./quizzes-home.html" class="nav-Quizzes">Quizzes</a>
+            <a href="./support.html" class="nav-Support">Support</a>
+        </div>
+        <a href="../pages/profile.html">
+            <i class="fa-solid fa-user" id="userIcon" style="cursor: pointer;"></i>
+        </a>
+
+        <!-- Navbar Menu For Media Query 990px -->
+        <i class="fa-solid fa-bars menu-icon" aria-label="Open Menu"></i>
+        <div class="navbar-menu">
+            <i class="fa-solid fa-xmark close-btn" aria-label="Close Menu"></i>
+            <ul>
+                <li><a href="./home.html">Home</a></li>
+                <li><a href="./courses-home.html">Courses</a></li>
+                <li><a href="./quizzes-home.html">Quizzes</a></li>
+                <li><a href="./support.html">Support</a></li>
+            </ul>
+            <a href="../pages/profile.html">
+                <i class="fa-solid fa-user" id="userIcon" style="cursor: pointer;"></i>
+            </a>
+        </div>
+    </nav>
+
+    <!-- Home section -->
+    <section class="home" id="home">
+        <div class="left fade-in delay-1">
+            <h1><span>Grow</span> Your</h1>
+            <h2>Experience With Us</h2>
+            <div class="search">
+                <input type="search" id="courseSearch" placeholder="Find Your Courses">
+                <button class="search-icon" id="searchButton" aria-label="Search">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+            </div>
+        </div>
+        <div class="right fade-in delay-2">
+            <a href="./quizzes-home.html">
+                <img src="../assets/images/home-images/Quizzes.png" alt="Learning Illustration" loading="lazy">
+            </a>
+        </div>
+    </section>
+
+    <!-- About section -->
+    <section class="about fade-in delay-1" id="about">
+        <div class="left">
+            <img src="../assets/images/home-images/About.jpg" alt="About EduZone" loading="lazy">
+        </div>
+        <div class="right">
+            <h4>Get More About Us</h4>
+            <h1>Thousand Of Top <span>Courses</span> <br> Now In One Place</h1>
+            <p>EduZone provides an innovative learning platform with the best instructors <br> in various fields to develop your skills and achieve your <br> professional and personal goals in an innovative and effective way.</p>
+            <h3><i class="fa-solid fa-arrow-right"></i> The Most World Class Instructors</h3>
+            <h3><i class="fa-solid fa-arrow-right"></i> Access Your Class Anywhere</h3>
+            <h3><i class="fa-solid fa-arrow-right"></i> Flexible Course Plan</h3>
+            <a href="#" class="btn-primary">Start Free Trial <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+    </section>
+
+    <!-- Video section -->
+    <section class="video fade-in delay-2" id="video">
+        <div class="left">
+            <h1>Learning is <span>What You</span> <br> Make of it. Make it Yours <br> at EduZone</h1>
+            <div class="video-btn">
+                <a href="#" class="btn-primary">Start Free Trial <i class="fa-solid fa-arrow-right"></i></a>
+                <button class="btn-secondary"><i class="fa-solid fa-circle-play"></i> Watch Video</button>
+            </div>
+        </div>
+        <div class="right">
+            <img src="../assets/images/home-images/Video.jpg" alt="Video Learning" loading="lazy">
+        </div>
+    </section>
+
+    <!-- Subjects section -->
+    <section class="subjects fade-in delay-3" id="subjects">
+        <h1>Popular Subjects</h1>
+        <div class="item">
+            <div class="card card-1 Popular color1">
+                <i class="fas fa-draw-polygon"></i>
+                <div class="info">
+                    <h2>Graphic Design</h2>
+                    <p>Learn pattern design and design software like Photoshop, Figma, After Effects</p>
+                </div>
+                <a href="#" class="learn-more">Learn More</a>
+            </div>
+            <div class="card card-2 Popular color2">
+                <i class="fas fa-user-gear"></i>
+                <div class="info">
+                    <h2>Programming</h2>
+                    <p>Learn programming from zero to hero, algorithms, basics, data structures, databases, and problem-solving</p>
+                </div>
+                <a href="#" class="learn-more">Learn More</a>
+            </div>
+            <div class="card card-3 Popular color3">
+                <i class="fas fa-chart-line"></i>
+                <div class="info">
+                    <h2>Business</h2>
+                    <p>Learn business accounting, account management, and explore more topics in our course</p>
+                </div>
+                <a href="#" class="learn-more">Learn More</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Learn Section -->
+    <section class="learn fade-in delay-1" id="learn">
+        <div class="head">
+            <h2>Learn With Quality Content</h2>
+            <p>Different educational paths at EduZone Academy provide you with many options to give you an<br> easy and rich experience in your learning journey.</p>
+        </div>
+        <div class="info">
+            <div class="item">
+                <img src="../assets/images/home-images/learn-1.png" alt="Programming" loading="lazy">
+                <h2>Programming</h2>
+            </div>
+            <div class="item">
+                <img src="../assets/images/home-images/learn-2.png" alt="Design" loading="lazy">
+                <h2>Design</h2>
+            </div>
+            <div class="item">
+                <img src="../assets/images/home-images/learn-3.png" alt="Business" loading="lazy">
+                <h2>Business</h2>
+            </div>
+            <div class="item">
+                <img src="../assets/images/home-images/learn-4.png" alt="AI" loading="lazy">
+                <h2>AI</h2>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tracks Section -->
+    <section class="tracks fade-in delay-2" id="tracks">
+        <div class="head">
+            <h1>Tracks</h1>
+            <p>The Most Popular Majors In The Academy</p>
+        </div>
+        <div class="info">
+            <div class="item">
+                <img src="../assets/images/home-images/track-1.png" alt="Software Engineering" loading="lazy">
+                <h2>Software Engineering</h2>
+            </div>
+            <div class="item">
+                <img src="../assets/images/home-images/track-2.png" alt="Data Science" loading="lazy">
+                <h2>Data Science</h2>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="item">
+            <img src="../assets/images/home-images/logo.png" alt="EduZone Logo">
+            <p>EduZone is an innovative learning<br> platform that provides courses in various <br> fields with continuous assessment and<br> personalized progress tracking. It<br> creates a dynamic and engaging<br> educational environment.</p>
+            <ul class="social-icons">
+                <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                <li><a href="#"><i class="fab fa-facebook"></i></a></li>
+                <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
+                <li><a href="#"><i class="fab fa-x-twitter"></i></a></li>
+                <li><a href="#"><i class="fab fa-google"></i></a></li>
+            </ul>
+        </div>
+        <div class="item">
+            <h3>EduZone</h3>
+            <ol>
+                <li><a href="./support.html">About Us</a></li>
+                <li><a href="./support.html">Services</a></li>
+                <li><a href="./support.html">Community</a></li>
+                <li><a href="./support.html">Todo list</a></li>
+            </ol>
+        </div>
+        <div class="item">
+            <h3>Support</h3>
+            <ol>
+                <li><a href="./support.html">Help</a></li>
+                <li><a href="./support.html">Tweet @us</a></li>
+                <li><a href="./support.html">Chat bot</a></li>
+                <li><a href="./support.html">Feedback</a></li>
+            </ol>
+        </div>
+        <div class="item">
+            <h3>Links</h3>
+            <ol>
+                <li><a href="./courses-home.html">Courses</a></li>
+                <li><a href="./quizzes-home.html">Quizzes</a></li>
+                <li><a href="./support.html">Support</a></li>
+            </ol>
+        </div>
+        <div class="item">
+            <h3>Contact us</h3>
+            <a href="mailto:support@mail.com"><i class="fas fa-envelope"></i> support@mail.com</a>
+        </div>
+    </footer>
+
+    <div class="copyright">
+        <div class="info">
+            Copyright © 2025 by EduZone - All rights reserved
+        </div>
+        <div class="info">
+            <a href="#">Privacy policy</a>
+            <a href="#">Terms of use</a>
+            <a href="#">Legal</a>
+            <a href="#">Site map</a>
+        </div>
+    </div>
+
+    <!-- Footer for media query -->
+    <div class="footer">
+        <div class="info">
+            <h2>Follow us on social media</h2>
+            <ul class="social-icons">
+                <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                <li><a href="#"><i class="fab fa-facebook"></i></a></li>
+                <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
+                <li><a href="#"><i class="fab fa-x-twitter"></i></a></li>
+                <li><a href="#"><i class="fab fa-google"></i></a></li>
+            </ul>
+        </div>
+
+        <div class="item">
+            <h3 class="footer-btn">EduZone <i class="fa-solid fa-arrow-down"></i></h3>
+            <ol>
+                <li><a href="./support.html">About Us</a></li>
+                <li><a href="./support.html">Services</a></li>
+                <li><a href="./home.html">Community</a></li>
+                <li><a href="./support.html">Todo list</a></li>
+            </ol>
+        </div>
+
+        <div class="item">
+            <h3 class="footer-btn">Support <i class="fa-solid fa-arrow-down"></i></h3>
+            <ol>
+                <li><a href="./support.html">Help</a></li>
+                <li><a href="./support.html">Tweet @us</a></li>
+                <li><a href="./support.html">Chat bot</a></li>
+                <li><a href="./support.html">Feedback</a></li>
+            </ol>
+        </div>
+
+        <div class="item">
+            <h3 class="footer-btn">Links <i class="fa-solid fa-arrow-down"></i></h3>
+            <ol>
+                <li><a href="./courses-home.html">Courses</a></li>
+                <li><a href="./quizzes-home.html">Quizzes</a></li>
+                <li><a href="./support.html">Support</a></li>
+            </ol>
+        </div>
+
+        <div class="item">
+            <h3 class="footer-btn">Contact us <i class="fa-solid fa-arrow-down"></i></h3>
+            <ol>
+                <li><a href="mailto:support@mail.com"><i class="fas fa-envelope" style="color: #0559CF;"></i> support@mail.com</a></li>
+            </ol>
+        </div>
+        <h4>Copyright © 2025 by EduZone - All rights reserved</h4>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="../scripts/navbar-menu.js"></script>
+    <script src="../scripts/preloader.js"></script>
+    <script src="../scripts/search.js"></script>
+
+    <script src="../scripts/Login_button.js">
+    </script>
+
+
+</body>
+
+</html>

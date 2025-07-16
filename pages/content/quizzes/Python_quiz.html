@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../../components/quizzes.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>MCQ Quiz - Python</title>
+</head>
+
+<body>
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="spinner"></div>
+    </div>
+
+    <!-- Quiz Header -->
+    <div class="quiz-header">
+        <div class="quiz-header-content">
+            <h1>Python Programming Quiz</h1>
+            <p>Test your knowledge of Python programming concepts with this comprehensive quiz covering basic to advanced topics.</p>
+            <div class="quiz-stats">
+                <div class="stat">
+                    <i class="fas fa-question-circle"></i>
+                    <span>20 Questions</span>
+                </div>
+                <div class="stat">
+                    <i class="fas fa-clock"></i>
+                    <span>30 Minutes</span>
+                </div>
+                <div class="stat">
+                    <i class="fas fa-trophy"></i>
+                    <span>Certificate Available</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="quiz-container">
+        <!-- Section Indicator -->
+        <div class="section-indicator" id="sectionIndicator">Basic Concepts</div>
+
+        <!-- Quiz Instructions -->
+        <div class="quiz-instructions">
+            <h3><i class="fas fa-info-circle"></i> Instructions</h3>
+            <ul>
+                <li>Read each question carefully before selecting an answer</li>
+                <li>Each question has only one correct answer</li>
+                <li>You can navigate between sections using the buttons at the bottom</li>
+                <li>Click "Check Answers" to see your score for each section</li>
+            </ul>
+        </div>
+
+        <!-- Timer -->
+        <div class="timer">
+            <i class="fas fa-clock"></i>
+            <span id="timeLeft">30:00</span>
+        </div>
+
+        <!-- Section 1 (Questions 1-7) -->
+        <div class="quiz-section" id="section1">
+            <h2 class="section-title">Basic Concepts (Questions 1-7)</h2>
+
+            <!-- Question 1 -->
+            <div class="question">
+                <p>1. What is the correct file extension for Python files?</p>
+                <div class="options">
+                    <label><input type="radio" name="q1" value="a"><span>.py</span></label>
+                    <label><input type="radio" name="q1" value="b"><span>.java</span></label>
+                    <label><input type="radio" name="q1" value="c"><span>.cs</span></label>
+                </div>
+            </div>
+
+            <!-- Question 2 -->
+            <div class="question">
+                <p>2. How do you start a comment in Python?</p>
+                <div class="options">
+                    <label><input type="radio" name="q2" value="a"><span>#</span></label>
+                    <label><input type="radio" name="q2" value="b"><span>//</span></label>
+                    <label><input type="radio" name="q2" value="c"><span>&lt;!-- --&gt;</span></label>
+                </div>
+            </div>
+
+            <!-- Question 3 -->
+            <div class="question">
+                <p>3. How do you print "Hello World" in Python?</p>
+                <div class="options">
+                    <label><input type="radio" name="q3" value="a"><span>print("Hello World")</span></label>
+                    <label><input type="radio" name="q3" value="b"><span>Console.WriteLine("Hello World");</span></label>
+                    <label><input type="radio" name="q3" value="c"><span>echo "Hello World";</span></label>
+                </div>
+            </div>
+
+            <!-- Question 4 -->
+            <div class="question">
+                <p>4. Which of these is a mutable data type in Python?</p>
+                <div class="options">
+                    <label><input type="radio" name="q4" value="a"><span>list</span></label>
+                    <label><input type="radio" name="q4" value="b"><span>tuple</span></label>
+                    <label><input type="radio" name="q4" value="c"><span>string</span></label>
+                </div>
+            </div>
+
+            <!-- Question 5 -->
+            <div class="question">
+                <p>5. What is the output of: type(3.14)?</p>
+                <div class="options">
+                    <label><input type="radio" name="q5" value="a"><span>float</span></label>
+                    <label><input type="radio" name="q5" value="b"><span>int</span></label>
+                    <label><input type="radio" name="q5" value="c"><span>str</span></label>
+                </div>
+            </div>
+
+            <!-- Question 6 -->
+            <div class="question">
+                <p>6. How do you define a function in Python?</p>
+                <div class="options">
+                    <label><input type="radio" name="q6" value="a"><span>def my_function():</span></label>
+                    <label><input type="radio" name="q6" value="b"><span>function my_function() { }</span></label>
+                    <label><input type="radio" name="q6" value="c"><span>func my_function()</span></label>
+                </div>
+            </div>
+
+            <!-- Question 7 -->
+            <div class="question">
+                <p>7. What does the "len()" function do in Python?</p>
+                <div class="options">
+                    <label><input type="radio" name="q7" value="a"><span>Returns the length of an object</span></label>
+                    <label><input type="radio" name="q7" value="b"><span>Converts a value to an integer</span></label>
+                    <label><input type="radio" name="q7" value="c"><span>Prints output to console</span></label>
+                </div>
+            </div>
+
+            <!-- Progress Bar -->
+            <div class="progress-container">
+                <div class="progress-bar" style="width: 35%;"></div>
+            </div>
+
+            <div class="navigation-buttons">
+                <button class="check-btn" onclick="checkSection(1)"><i class="fas fa-check-circle"></i> Check Answers</button>
+                <!-- في القسم الأول -->
+                <button class="next-btn" onclick="if(checkSection(1)) showSection(2)"><i class="fas fa-arrow-right"></i> Next Section</button>
+
+                <!-- في القسم الثاني -->
+
+            </div>
+
+            <div class="result" id="result1"></div>
+            <div class="incorrect" id="incorrect1"></div>
+        </div>
+
+        <!-- Section 2 (Questions 8-14) -->
+        <div class="quiz-section" id="section2">
+            <h2 class="section-title">Intermediate Concepts (Questions 8-14)</h2>
+
+            <!-- Question 8 -->
+            <div class="question">
+                <p>8. Which of the following is NOT a valid Python data type?</p>
+                <div class="options">
+                    <label><input type="radio" name="q8" value="a"><span>set</span></label>
+                    <label><input type="radio" name="q8" value="b"><span>dictionary</span></label>
+                    <label><input type="radio" name="q8" value="c"><span>map</span></label>
+                </div>
+            </div>
+
+            <!-- Question 9 -->
+            <div class="question">
+                <p>9. What keyword is used to create a class in Python?</p>
+                <div class="options">
+                    <label><input type="radio" name="q9" value="a"><span>class</span></label>
+                    <label><input type="radio" name="q9" value="b"><span>struct</span></label>
+                    <label><input type="radio" name="q9" value="c"><span>object</span></label>
+                </div>
+            </div>
+
+            <!-- Question 10 -->
+            <div class="question">
+                <p>10. How do you handle exceptions in Python?</p>
+                <div class="options">
+                    <label><input type="radio" name="q10" value="a"><span>try-except</span></label>
+                    <label><input type="radio" name="q10" value="b"><span>catch</span></label>
+                    <label><input type="radio" name="q10" value="c"><span>throw</span></label>
+                </div>
+            </div>
+
+            <!-- Question 11 -->
+            <div class="question">
+                <p>11. Which of the following is a Python tuple?</p>
+                <div class="options">
+                    <label><input type="radio" name="q11" value="a"><span>(1, 2, 3)</span></label>
+                    <label><input type="radio" name="q11" value="b"><span>[1, 2, 3]</span></label>
+                    <label><input type="radio" name="q11" value="c"><span>{1, 2, 3}</span></label>
+                </div>
+            </div>
+
+            <!-- Question 12 -->
+            <div class="question">
+                <p>12. What is the result of 3 == 3.0 in Python?</p>
+                <div class="options">
+                    <label><input type="radio" name="q12" value="a"><span>True</span></label>
+                    <label><input type="radio" name="q12" value="b"><span>False</span></label>
+                    <label><input type="radio" name="q12" value="c"><span>Error</span></label>
+                </div>
+            </div>
+
+            <!-- Question 13 -->
+            <div class="question">
+                <p>13. What is the output of: print(type([]))?</p>
+                <div class="options">
+                    <label><input type="radio" name="q13" value="a"><span>&lt;class 'list'&gt;</span></label>
+                    <label><input type="radio" name="q13" value="b"><span>&lt;class 'tuple'&gt;</span></label>
+                    <label><input type="radio" name="q13" value="c"><span>&lt;class 'dict'&gt;</span></label>
+                </div>
+            </div>
+
+            <!-- Question 14 -->
+            <div class="question">
+                <p>14. Which function converts a string to an integer in Python?</p>
+                <div class="options">
+                    <label><input type="radio" name="q14" value="a"><span>int()</span></label>
+                    <label><input type="radio" name="q14" value="b"><span>str()</span></label>
+                    <label><input type="radio" name="q14" value="c"><span>float()</span></label>
+                </div>
+            </div>
+
+            <!-- Progress Bar -->
+            <div class="progress-container">
+                <div class="progress-bar" style="width: 70%;"></div>
+            </div>
+
+            <div class="navigation-buttons">
+                <button class="prev-btn" onclick="showSection(1)"><i class="fas fa-arrow-left"></i> Previous Section</button>
+                <button class="check-btn" onclick="checkSection(2)"><i class="fas fa-check-circle"></i> Check Answers</button>
+                <button class="next-btn" onclick="if(checkSection(2)) showSection(3)"><i class="fas fa-arrow-right"></i> Next Section</button>
+            </div>
+
+            <div class="result" id="result2"></div>
+            <div class="incorrect" id="incorrect2"></div>
+        </div>
+
+        <!-- Section 3 (Questions 15-20) -->
+        <div class="quiz-section" id="section3">
+            <h2 class="section-title">Advanced Concepts (Questions 15-20)</h2>
+
+            <!-- Question 15 -->
+            <div class="question">
+                <p>15. What does the "lambda" keyword do in Python?</p>
+                <div class="options">
+                    <label><input type="radio" name="q15" value="a"><span>Creates an anonymous function</span></label>
+                    <label><input type="radio" name="q15" value="b"><span>Defines a loop</span></label>
+                    <label><input type="radio" name="q15" value="c"><span>Declares a variable</span></label>
+                </div>
+            </div>
+
+            <!-- Question 16 -->
+            <div class="question">
+                <p>16. Which method adds an item to the end of a list in Python?</p>
+                <div class="options">
+                    <label><input type="radio" name="q16" value="a"><span>append()</span></label>
+                    <label><input type="radio" name="q16" value="b"><span>add()</span></label>
+                    <label><input type="radio" name="q16" value="c"><span>insert()</span></label>
+                </div>
+            </div>
+
+            <!-- Question 17 -->
+            <div class="question">
+                <p>17. How do you import a module in Python?</p>
+                <div class="options">
+                    <label><input type="radio" name="q17" value="a"><span>import module_name</span></label>
+                    <label><input type="radio" name="q17" value="b"><span>include module_name</span></label>
+                    <label><input type="radio" name="q17" value="c"><span>using module_name</span></label>
+                </div>
+            </div>
+
+            <!-- Question 18 -->
+            <div class="question">
+                <p>18. Which of these is a Python dictionary?</p>
+                <div class="options">
+                    <label><input type="radio" name="q18" value="a"><span>{'key': 'value'}</span></label>
+                    <label><input type="radio" name="q18" value="b"><span>['key', 'value']</span></label>
+                    <label><input type="radio" name="q18" value="c"><span>('key', 'value')</span></label>
+                </div>
+            </div>
+
+            <!-- Question 19 -->
+            <div class="question">
+                <p>19. What keyword is used to create a generator in Python?</p>
+                <div class="options">
+                    <label><input type="radio" name="q19" value="a"><span>yield</span></label>
+                    <label><input type="radio" name="q19" value="b"><span>return</span></label>
+                    <label><input type="radio" name="q19" value="c"><span>generate</span></label>
+                </div>
+            </div>
+
+            <!-- Question 20 -->
+            <div class="question">
+                <p>20. How do you write a conditional statement in Python?</p>
+                <div class="options">
+                    <label><input type="radio" name="q20" value="a"><span>if condition:</span></label>
+                    <label><input type="radio" name="q20" value="b"><span>if (condition) { }</span></label>
+                    <label><input type="radio" name="q20" value="c"><span>condition ? true : false</span></label>
+                </div>
+            </div>
+
+            <!-- Progress Bar -->
+            <div class="progress-container">
+                <div class="progress-bar" style="width: 100%;"></div>
+            </div>
+
+            <div class="navigation-buttons">
+                <button class="prev-btn" onclick="showSection(2)"><i class="fas fa-arrow-left"></i> Previous Section</button>
+                <button class="check-btn" onclick="checkSection(3)"><i class="fas fa-check-circle"></i> Check Answers</button>
+                <button class="finish-btn" onclick="showFinalResults()"><i class="fas fa-flag-checkered"></i> Finish Quiz</button>
+            </div>
+
+            <div class="result" id="result3"></div>
+            <div class="incorrect" id="incorrect3"></div>
+        </div>
+
+        <!-- Final Results Summary (Initially Hidden) -->
+        <div class="results-summary" id="finalResults" style="display: none;">
+            <h3>Quiz Completed!</h3>
+            <div class="score-container">
+                <div class="score-circle">
+                    <span id="scorePercent">0%</span>
+                </div>
+            </div>
+            <div class="stats-container">
+                <div class="stat-item">
+                    <i class="fas fa-check-circle correct-icon"></i>
+                    <span id="correctCount">0</span> Correct
+                </div>
+                <div class="stat-item">
+                    <i class="fas fa-times-circle incorrect-icon"></i>
+                    <span id="incorrectCount">0</span> Incorrect
+                </div>
+                <div class="stat-item">
+                    <i class="fas fa-question-circle unanswered-icon"></i>
+                    <span id="unansweredCount">0</span> Unanswered
+                </div>
+            </div>
+            <div class="results-message" id="resultsMessage"></div>
+            <div class="results-buttons">
+                <button class="retry-btn" onclick="location.reload()"><i class="fas fa-redo"></i> Retry Quiz</button>
+                <button class="courses-btn" onclick="window.location.href='../../../pages/courses-home.html'"><i class="fas fa-book"></i> Back to Courses</button>
+                <button class="certificate-btn" id="certificateBtn"><i class="fas fa-certificate"></i> Get Certificate</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Back to Top Button -->
+    <div class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
+    <!-- Confetti Container for Celebration -->
+    <div id="confettiContainer"></div>
+
+    <script>
+        const correct = {
+            q1: "a",
+            q2: "a",
+            q3: "a",
+            q4: "a",
+            q5: "a",
+            q6: "a",
+            q7: "a",
+            q8: "c",
+            q9: "a",
+            q10: "a",
+            q11: "a",
+            q12: "a",
+            q13: "a",
+            q14: "a",
+            q15: "a",
+            q16: "a",
+            q17: "a",
+            q18: "a",
+            q19: "a",
+            q20: "a"
+        };
+
+        const ranges = {
+            1: {
+                s: 1,
+                e: 7,
+                t: "Basic"
+            },
+            2: {
+                s: 8,
+                e: 14,
+                t: "Intermediate"
+            },
+            3: {
+                s: 15,
+                e: 20,
+                t: "Advanced"
+            }
+        };
+        const el = {
+            title: document.getElementById("sectionIndicator"),
+            timer: document.getElementById("timeLeft"),
+            results: document.getElementById("finalResults"),
+            percent: document.getElementById("scorePercent"),
+            correct: document.getElementById("correctCount"),
+            incorrect: document.getElementById("incorrectCount"),
+            unanswered: document.getElementById("unansweredCount"),
+            msg: document.getElementById("resultsMessage"),
+            confetti: document.getElementById("confettiContainer")
+        };
+
+        function showSection(n) {
+            document.querySelectorAll('.quiz-section').forEach(s => s.style.display = 'none');
+            document.getElementById(`section${n}`).style.display = 'block';
+            el.title.textContent = ranges[n].t;
+            window.scrollTo(0, 0);
+        }
+
+        function checkSection(n) {
+            let {
+                s,
+                e
+            } = ranges[n], score = 0, wrong = [], total = e - s + 1, min = 4;
+            for (let i = s; i <= e; i++) {
+                let a = document.querySelector(`input[name="q${i}"]:checked`),
+                    c = correct[`q${i}`];
+                if (a) {
+                    a.parentElement.classList.add(a.value === c ? "correct" : "incorrect");
+                    if (a.value === c) score++;
+                    else wrong.push(`Q${i}: اخترت ${a.value}، الصحيح ${c}`);
+                } else wrong.push(`Q${i}: لم تُجب`);
+            }
+            document.getElementById(`result${n}`).innerHTML = `<h3>النتيجة ${score}/${total}</h3>`;
+            document.getElementById(`incorrect${n}`).innerHTML = wrong.length ? wrong.join("<br>") : "كل الإجابات صحيحة!";
+            if (score < min) return alert(`تحتاج على الأقل ${min} للإكمال. نتيجتك: ${score}`), false;
+            return true;
+        }
+
+        function showFinal() {
+            let total = 0,
+                correctCount = 0,
+                incorrect = 0,
+                unanswered = 0;
+            for (let q in correct) {
+                let a = document.querySelector(`input[name="${q}"]:checked`);
+                if (a)(a.value === correct[q]) ? correctCount++ : incorrect++;
+                else unanswered++;
+            }
+            let percent = Math.round((correctCount / 20) * 100);
+            el.percent.textContent = `${percent}%`;
+            el.correct.textContent = correctCount;
+            el.incorrect.textContent = incorrect;
+            el.unanswered.textContent = unanswered;
+            let msg = "";
+            if (percent >= 90) msg = "ممتاز!";
+            else if (percent >= 70) msg = "جيد جداً!";
+            else if (percent >= 50) msg = "جيد!";
+            else msg = "تحتاج تحسين";
+            el.msg.innerHTML = `<h3>${msg}</h3>`;
+            if (percent >= 90) createConfetti();
+            document.querySelectorAll(".quiz-section").forEach(s => s.style.display = "none");
+            el.results.style.display = "block";
+        }
+
+        function startTimer(sec) {
+            let timerBox = document.querySelector(".timer");
+            let t = setInterval(() => {
+                if (sec < 0) return clearInterval(t), showFinal();
+                let m = String(Math.floor(sec / 60)).padStart(2, "0");
+                let s = String(sec % 60).padStart(2, "0");
+                el.timer.textContent = `${m}:${s}`;
+                if (sec < 300) timerBox.classList.add("warning");
+                sec--;
+            }, 1000);
+        }
+
+        function createConfetti() {
+            let colors = ['#0559CF', '#FF6B00', '#28a745', '#dc3545', '#fff'];
+            for (let i = 0; i < 100; i++) {
+                let d = document.createElement('div');
+                d.className = 'confetti';
+                d.style.left = Math.random() * 100 + 'vw';
+                d.style.animationDuration = (Math.random() * 3 + 2) + 's';
+                d.style.animationDelay = (Math.random() * 2) + 's';
+                d.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+                d.style.width = d.style.height = (Math.random() * 10 + 5) + 'px';
+                d.style.transform = `rotate(${Math.random() * 360}deg)`;
+                el.confetti.appendChild(d);
+            }
+            setTimeout(() => el.confetti.innerHTML = '', 7000);
+        }
+
+        window.onscroll = () => {
+            let btn = document.getElementById('backToTop');
+            btn.classList.toggle('show', document.documentElement.scrollTop > 300);
+        };
+
+        document.getElementById('backToTop').onclick = () => window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+
+        window.addEventListener("load", () => {
+            document.querySelector(".preloader").style.display = "none";
+            let sec = new URLSearchParams(location.search).get("section") || 1;
+            showSection(+sec);
+            startTimer(1800);
+        });
+    </script>
+
+</body>
+
+</html>

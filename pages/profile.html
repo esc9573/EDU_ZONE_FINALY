@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles/profile.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <title>User Profile | EduZone</title>
+</head>
+
+<body>
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="spinner"></div>
+    </div>
+
+    <div class="container">
+        <div class="sidebar">
+            <div class="logo">
+                <a href="/pages/home.html"><img src="../assets/images/home-images/logo.png" alt="EduZone Logo"></a>
+            </div>
+            <ul>
+                <li class="active" data-section="dashboard">
+                    <i class="fas fa-tachometer-alt"></i>
+                    <span>Dashboard</span>
+                </li>
+                <li data-section="account-settings">
+                    <i class="fas fa-user-cog"></i>
+                    <span>Account Settings</span>
+                </li>
+                <li data-section="privacy-settings">
+                    <i class="fas fa-user-shield"></i>
+                    <span>Privacy</span>
+                </li>
+                <li data-section="security-settings">
+                    <i class="fas fa-lock"></i>
+                    <span>Security</span>
+                </li>
+                <li data-section="logout" id="logout-btn">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <span>Logout</span>
+                </li>
+            </ul>
+        </div>
+
+        <div class="content">
+            <!-- Dashboard Section -->
+            <section id="dashboard" class="section active">
+                <div class="section-header">
+                    <h2>Dashboard</h2>
+                </div>
+                <div class="dashboard-box">
+                    <div class="user-info">
+                        <div class="user-avatar">
+                            <img src="../assets/images/home-images/profile-placeholder.jpg" alt="User Avatar">
+                            <div class="edit-avatar">
+                                <i class="fas fa-camera"></i>
+                            </div>
+                        </div>
+                        <div class="user-details">
+                            <h3 id="dash-username">Loading..</h3>
+                            <p id="dash-email">user@example.com</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dashboard-stats">
+                    <div class="stat-card">
+                        <i class="fas fa-book"></i>
+                        <div class="stat-info">
+                            <h4>Enrolled Courses</h4>
+                            <p>5</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fas fa-certificate"></i>
+                        <div class="stat-info">
+                            <h4>Completed Courses</h4>
+                            <p>3</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fas fa-trophy"></i>
+                        <div class="stat-info">
+                            <h4>Achievements</h4>
+                            <p>7</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="quick-links">
+                    <h3>Quick Links</h3>
+                    <div class="links-container">
+                        <a href="./home.html" class="link-card">
+                            <i class="fas fa-home"></i>
+                            <span>Home</span>
+                        </a>
+                        <a href="./courses-home.html" class="link-card">
+                            <i class="fas fa-book"></i>
+                            <span>Courses</span>
+                        </a>
+                        <a href="./quizzes-home.html" class="link-card">
+                            <i class="fas fa-question-circle"></i>
+                            <span>Quizzes</span>
+                        </a>
+                        <a href="./support.html" class="link-card">
+                            <i class="fas fa-headset"></i>
+                            <span>Support</span>
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Account Settings Section -->
+            <section id="account-settings" class="section">
+                <div class="section-header">
+                    <h2>Account Settings</h2>
+                    <p>Manage your personal information</p>
+                </div>
+                <form id="account-form" action="../php/accountsett.php" method="POST">
+                    <div class="form-group">
+                        <label for="first-name">First Name</label>
+                        <input type="text" id="first-name" name="first_name" placeholder="Enter first name">
+                    </div>
+                    <div class="form-group">
+                        <label for="last-name">Last Name</label>
+                        <input type="text" id="last-name" name="last_name" placeholder="Enter last name">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" placeholder="Enter email">
+                    </div>
+                    <div class="form-group">
+                        <label for="mobile">Mobile Number</label>
+                        <input type="text" id="mobile" name="mobile" placeholder="Enter mobile number">
+                    </div>
+                    <div class="form-group">
+                        <label for="gender">Gender</label>
+                        <select id="gender" name="gender">
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+            <option value="other">Other</option>
+            <option value="prefer-not">Prefer not to say</option>
+        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="country">Country</label>
+                        <select id="country" name="country">
+            <option value="egypt">Egypt</option>
+            <option value="saudi-arabia">Saudi Arabia</option>
+            <option value="uae">UAE</option>
+            <option value="usa">United States</option>
+            <option value="uk">United Kingdom</option>
+            <option value="canada">Canada</option>
+        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="address">Address</label>
+                        <input type="text" id="address" name="address" placeholder="Enter address">
+                    </div>
+                    <div class="form-group">
+                        <label for="bio">Bio</label>
+                        <textarea id="bio" name="bio" placeholder="Tell us about yourself"></textarea>
+                    </div>
+                    <button type="submit" class="save-btn">Save Changes</button>
+                </form>
+
+
+
+            </section>
+
+            <!-- Privacy Settings Section -->
+            <section id="privacy-settings" class="section">
+                <div class="section-header">
+                    <h2>Privacy Settings</h2>
+                    <p>Manage your privacy preferences</p>
+                </div>
+                <div class="settings-container">
+                    <div class="setting-group">
+                        <h3>Profile Visibility</h3>
+                        <div class="radio-option">
+                            <input type="radio" id="public-profile" name="profile-visibility" value="public">
+                            <label for="public-profile">
+                                <span>Public</span>
+                                <p>Anyone can see your profile information and course activity</p>
+                            </label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" id="limited-profile" name="profile-visibility" value="limited" checked>
+                            <label for="limited-profile">
+                                <span>Limited</span>
+                                <p>Only registered users can see your profile information</p>
+                            </label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" id="private-profile" name="profile-visibility" value="private">
+                            <label for="private-profile">
+                                <span>Private</span>
+                                <p>Only you can see your profile information</p>
+                            </label>
+                        </div>
+                    </div>
+
+                    <button type="button" class="save-btn">Save Privacy Preferences</button>
+                </div>
+            </section>
+
+            <!-- Security Settings Section -->
+            <section id="security-settings" class="section">
+                <div class="section-header">
+                    <h2>Security Settings</h2>
+                    <p>Manage your account security</p>
+                </div>
+                <div class="settings-container">
+                    <div class="setting-group">
+                        <h3>Password</h3>
+                        <!-- نموذج تغيير كلمة المرور -->
+                        <form id="password-form" method="POST" action="../php/resetpass.php">
+                            <div class="form-group">
+                                <label for="current-password">Current Password</label>
+                                <div class="password-input">
+                                    <input type="password" id="current-password" name="current_password" placeholder="Enter current password" required>
+                                    <i class="fas fa-eye toggle-password"></i>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="new-password">New Password</label>
+                                <div class="password-input">
+                                    <input type="password" id="new-password" name="new_password" placeholder="Enter new password" required>
+                                    <i class="fas fa-eye toggle-password"></i>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="confirm-password">Confirm New Password</label>
+                                <div class="password-input">
+                                    <input type="password" id="confirm-password" name="confirm_password" placeholder="Confirm new password" required>
+                                    <i class="fas fa-eye toggle-password"></i>
+                                </div>
+                            </div>
+
+                            <div class="password-strength">
+                                <div class="strength-meter">
+                                    <div class="strength-segment"></div>
+                                    <div class="strength-segment"></div>
+                                    <div class="strength-segment"></div>
+                                    <div class="strength-segment"></div>
+                                </div>
+                                <p class="strength-text">Password strength: <span>Weak</span></p>
+                            </div>
+
+                            <div class="password-requirements">
+                                <p><i class="fas fa-check-circle"></i> At least 8 characters</p>
+                                <p><i class="fas fa-check-circle"></i> At least one uppercase letter</p>
+                                <p><i class="fas fa-check-circle"></i> At least one lowercase letter</p>
+                                <p><i class="fas fa-check-circle"></i> At least one number</p>
+                                <p><i class="fas fa-check-circle"></i> At least one special character</p>
+                            </div>
+
+                            <button type="submit" class="save-btn">Update Password</button>
+                        </form>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </div>
+
+    <!-- Confirmation Modal -->
+    <div class="modal" id="confirmation-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Confirm Action</h3>
+                <span class="close-modal">&times;</span>
+            </div>
+            <div class="modal-body">
+                <p id="modal-message">Are you sure you want to proceed with this action?</p>
+            </div>
+            <div class="modal-footer">
+                <button class="cancel-btn">Cancel</button>
+                <button class="confirm-btn">Confirm</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="../scripts/preloader.js"></script>
+    <script src="../scripts/password.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // ===== SECTION NAVIGATION =====
+            const sidebarItems = document.querySelectorAll('.sidebar ul li');
+            const sections = document.querySelectorAll('.section');
+
+            sidebarItems.forEach(item => {
+                item.addEventListener('click', function() {
+                    const sectionId = this.getAttribute('data-section');
+
+                    if (sectionId === 'logout') {
+                        showConfirmationModal('Are you sure you want to logout?', function() {
+                            // Redirect to login page
+                            window.location.href = './login.html';
+                        });
+                        return;
+                    }
+
+                    // Update active sidebar item and show selected section
+                    sidebarItems.forEach(item => item.classList.remove('active'));
+                    this.classList.add('active');
+                    sections.forEach(section => section.classList.remove('active'));
+                    document.getElementById(sectionId).classList.add('active');
+                });
+            });
+
+            // ===== PASSWORD VISIBILITY TOGGLE =====
+            const togglePasswordButtons = document.querySelectorAll('.toggle-password');
+            togglePasswordButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const passwordInput = this.previousElementSibling;
+                    const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+                    passwordInput.setAttribute('type', type);
+                    this.classList.toggle('fa-eye');
+                    this.classList.toggle('fa-eye-slash');
+                });
+            });
+
+            // ===== THEME MANAGEMENT =====
+            // Theme toggle and save to localStorage
+            const themeOptions = document.querySelectorAll('input[name="theme"]');
+            themeOptions.forEach(option => {
+                option.addEventListener('change', function() {
+                    if (this.checked) {
+                        document.body.className = '';
+                        document.body.classList.add(this.value + '-theme');
+                        localStorage.setItem('theme', this.value);
+                    }
+                });
+            });
+
+            // Load saved theme from localStorage
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme) {
+                document.body.className = '';
+                document.body.classList.add(savedTheme + '-theme');
+                document.querySelector(`input[value="${savedTheme}"]`).checked = true;
+            }
+
+            // ===== CONFIRMATION MODAL =====
+            const modal = document.getElementById('confirmation-modal');
+            const closeModal = document.querySelector('.close-modal');
+            const cancelBtn = document.querySelector('.cancel-btn');
+            const confirmBtn = document.querySelector('.confirm-btn');
+            let confirmCallback = null;
+
+            function showConfirmationModal(message, callback) {
+                document.getElementById('modal-message').textContent = message;
+                modal.style.display = 'flex';
+                confirmCallback = callback;
+            }
+
+            // Modal close handlers
+            [closeModal, cancelBtn].forEach(el => {
+                el.addEventListener('click', () => modal.style.display = 'none');
+            });
+
+            confirmBtn.addEventListener('click', function() {
+                if (confirmCallback && typeof confirmCallback === 'function') {
+                    confirmCallback();
+                }
+                modal.style.display = 'none';
+            });
+
+            window.addEventListener('click', function(event) {
+                if (event.target === modal) {
+                    modal.style.display = 'none';
+                }
+            });
+
+            // ===== ACCOUNT ACTION BUTTONS =====
+            // Delete account button
+            const deleteAccountBtn = document.querySelector('.delete-btn');
+            if (deleteAccountBtn) {
+                deleteAccountBtn.addEventListener('click', function() {
+                    showConfirmationModal('Are you sure you want to permanently delete your account? This action cannot be undone.', function() {
+                        alert('Account deletion initiated.');
+                        // Perform account deletion logic here
+                    });
+                });
+            }
+
+            // Deactivate account button
+            const deactivateAccountBtn = document.querySelector('.danger-btn:not(.delete-btn)');
+            if (deactivateAccountBtn) {
+                deactivateAccountBtn.addEventListener('click', function() {
+                    showConfirmationModal('Are you sure you want to deactivate your account? You can reactivate it anytime by logging in.', function() {
+                        alert('Account deactivated.');
+                        // Perform account deactivation logic here
+                    });
+                });
+            }
+
+            // ===== PASSWORD STRENGTH METER =====
+            const newPasswordInput = document.getElementById('new-password');
+            if (newPasswordInput) {
+                const strengthSegments = document.querySelectorAll('.strength-segment');
+                const strengthText = document.querySelector('.strength-text span');
+                const passwordRequirements = document.querySelectorAll('.password-requirements p i');
+
+                newPasswordInput.addEventListener('input', function() {
+                    updatePasswordStrength(this.value);
+                });
+
+                function updatePasswordStrength(password) {
+                    let strength = 0;
+                    const checks = [{
+                            regex: /.{8,}/,
+                            index: 0
+                        }, // Length
+                        {
+                            regex: /[A-Z]/,
+                            index: 1
+                        }, // Uppercase
+                        {
+                            regex: /[a-z]/,
+                            index: 2
+                        }, // Lowercase
+                        {
+                            regex: /[0-9]/,
+                            index: 3
+                        }, // Numbers
+                        {
+                            regex: /[^A-Za-z0-9]/,
+                            index: 4
+                        } // Special chars
+                    ];
+
+                    // Check each requirement
+                    checks.forEach(check => {
+                        const isValid = check.regex.test(password);
+                        passwordRequirements[check.index].className = isValid ?
+                            'fas fa-check-circle valid' : 'fas fa-check-circle';
+                        if (isValid) strength++;
+                    });
+
+                    // Update strength meter segments
+                    strengthSegments.forEach((segment, index) => {
+                        segment.classList.toggle('active', index < strength);
+                    });
+
+                    // Update strength text
+                    const strengthLabels = ['Very Weak', 'Weak', 'Fair', 'Good', 'Strong', 'Very Strong'];
+                    const strengthClass = ['very-weak', 'weak', 'fair', 'good', 'strong', 'very-strong'];
+                    strengthText.textContent = strengthLabels[strength];
+                    strengthText.className = strengthClass[strength];
+                }
+            }
+
+            // ===== FORM HANDLING =====
+            // Handle form submissions
+
+
+            Object.keys(forms).forEach(formId => {
+                const form = document.getElementById(formId);
+                if (form) {
+                    form.addEventListener('submit', function(e) {
+                        e.preventDefault();
+                        const message = typeof forms[formId] === 'function' ?
+                            forms[formId](e) : forms[formId];
+                        if (message) alert(message);
+                    });
+                }
+            });
+
+
+            const editIcons = document.querySelectorAll('.edit-icon');
+            editIcons.forEach(icon => {
+                icon.addEventListener('click', function() {
+                    const input = this.parentElement.querySelector('input, select, textarea');
+                    if (input) {
+                        input.focus();
+                        if (['input', 'textarea'].includes(input.tagName.toLowerCase())) {
+                            input.setSelectionRange(input.value.length, input.value.length);
+                        }
+                    }
+                });
+            });
+        });
+    </script>
+
+
+    <script>
+        // دا كود عرض الاسم والايميل 
+        document.addEventListener("DOMContentLoaded", function() {
+            const username = sessionStorage.getItem("userName");
+            const email = sessionStorage.getItem("userEmail");
+
+            if (username && email) {
+                document.getElementById("dash-username").textContent = username;
+                document.getElementById("dash-email").textContent = email;
+            }
+        });
+    </script>
+
+
+</body>
+
+</html>

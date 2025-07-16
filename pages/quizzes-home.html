@@ -1,0 +1,880 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Test your programming knowledge with EduZone's comprehensive quiz collection across various languages and difficulty levels">
+
+    <!-- Links -->
+    <link rel="stylesheet" href="../styles/quizzes-home.css">
+    <link rel="stylesheet" href="../components/navbar.css">
+    <link rel="stylesheet" href="../components/footer.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <title>Quiz Hub | EduZone</title>
+</head>
+
+<body>
+    <!-- Preloader -->
+    <div class="preloader" id="preloader">
+        <div class="spinner"></div>
+        <p class="loading-text">Loading Quizzes...</p>
+    </div>
+
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+
+    <!-- Confetti Container for celebration effect -->
+    <div class="confetti-container" id="confettiContainer"></div>
+
+    <!-- Navbar -->
+    <nav id="navbar">
+        <div class="nav-logo">
+            <a href="./home.html"><img src="../assets/images/home-images/logo.png" alt="EduZone Logo"></a>
+        </div>
+        <div class="nav-links">
+            <a href="./home.html" class="nav-Home">Home</a>
+            <a href="./courses-home.html" class="nav-Courses">Courses</a>
+            <a href="./quizzes-home.html" class="nav-Quizzes active">Quizzes</a>
+            <a href="./support.html" class="nav-Support">Support</a>
+        </div>
+        <div class="nav-login" id="login-area">
+            <!-- بيتغير تلقائيًا حسب حالة الدخول -->
+            <span id="login-btn">
+            <a href="./login.html"><i class="fa-regular fa-user"></i> Login</a>
+        </span>
+        </div>
+
+        <!-- Navbar Menu For Media Query 990px -->
+        <i class="fa-solid fa-bars menu-icon" aria-label="Open Menu"></i>
+        <div class="navbar-menu">
+            <i class="fa-solid fa-xmark close-btn" aria-label="Close Menu"></i>
+            <ul>
+                <li><a href="./home.html">Home</a></li>
+                <li><a href="./courses-home.html">Courses</a></li>
+                <li><a href="./quizzes-home.html">Quizzes</a></li>
+                <li><a href="./support.html">Support</a></li>
+            </ul>
+            <a href="./Login.html" class="nav-login"><i class="fa-regular fa-user"></i> Login</a>
+        </div>
+    </nav>
+
+
+    <!-- Quiz Hub Header -->
+    <header class="quiz-header">
+        <div class="quiz-header-content">
+            <h1>Quiz Hub</h1>
+            <p>Test your knowledge with our comprehensive collection of quizzes across various programming languages and difficulty levels</p>
+            <div class="quiz-stats">
+                <div class="stat">
+                    <i class="fas fa-code"></i>
+                    <span>Multiple Languages</span>
+                </div>
+                <div class="stat">
+                    <i class="fas fa-layer-group"></i>
+                    <span>Various Difficulty Levels</span>
+                </div>
+                <div class="stat">
+                    <i class="fas fa-trophy"></i>
+                    <span>Earn Certificates</span>
+                </div>
+                <div class="stat">
+                    <i class="fas fa-users"></i>
+                    <span>10,000+ Students</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-container">
+        <!-- Filter Section -->
+        <section class="filter-section">
+            <h2 class="section-title"><i class="fas fa-filter"></i> Filter Quizzes</h2>
+
+            <!-- Search Bar -->
+            <div class="search-container">
+                <input type="text" id="quizSearch" placeholder="Search quizzes by name, language, or topic..." onkeyup="filterQuizzes()">
+                <button type="button" class="search-button" aria-label="Search">
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>
+
+            <!-- Filter Options -->
+            <div class="filter-groups">
+                <div class="filter-group">
+                    <h3><i class="fas fa-code"></i> Programming Language</h3>
+                    <div class="filter-options">
+                        <label class="filter-option">
+                            <input type="checkbox" value="all" checked onchange="filterQuizzes()" name="language" id="lang-all">
+                            <span class="checkmark"></span>
+                            <span class="option-text">All Languages</span>
+                        </label>
+                        <label class="filter-option">
+                            <input type="checkbox" value="cpp" onchange="filterQuizzes()" name="language">
+                            <span class="checkmark"></span>
+                            <span class="option-text">C++</span>
+                        </label>
+                        <label class="filter-option">
+                            <input type="checkbox" value="java" onchange="filterQuizzes()" name="language">
+                            <span class="checkmark"></span>
+                            <span class="option-text">Java</span>
+                        </label>
+                        <label class="filter-option">
+                            <input type="checkbox" value="python" onchange="filterQuizzes()" name="language">
+                            <span class="checkmark"></span>
+                            <span class="option-text">Python</span>
+                        </label>
+                        <label class="filter-option">
+                            <input type="checkbox" value="javascript" onchange="filterQuizzes()" name="language">
+                            <span class="checkmark"></span>
+                            <span class="option-text">JavaScript</span>
+                        </label>
+                        <label class="filter-option">
+                            <input type="checkbox" value="html" onchange="filterQuizzes()" name="language">
+                            <span class="checkmark"></span>
+                            <span class="option-text">HTML/CSS</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="filter-group">
+                    <h3><i class="fas fa-layer-group"></i> Difficulty Level</h3>
+                    <div class="filter-options">
+                        <label class="filter-option">
+                            <input type="checkbox" value="all" checked onchange="filterQuizzes()" name="difficulty" id="diff-all">
+                            <span class="checkmark"></span>
+                            <span class="option-text">All Levels</span>
+                        </label>
+                        <label class="filter-option">
+                            <input type="checkbox" value="beginner" onchange="filterQuizzes()" name="difficulty">
+                            <span class="checkmark"></span>
+                            <span class="option-text">Beginner</span>
+                        </label>
+                        <label class="filter-option">
+                            <input type="checkbox" value="intermediate" onchange="filterQuizzes()" name="difficulty">
+                            <span class="checkmark"></span>
+                            <span class="option-text">Intermediate</span>
+                        </label>
+                        <label class="filter-option">
+                            <input type="checkbox" value="advanced" onchange="filterQuizzes()" name="difficulty">
+                            <span class="checkmark"></span>
+                            <span class="option-text">Advanced</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="filter-group">
+                    <h3><i class="fas fa-clock"></i> Duration</h3>
+                    <div class="filter-options">
+                        <label class="filter-option">
+                            <input type="checkbox" value="all" checked onchange="filterQuizzes()" name="duration" id="dur-all">
+                            <span class="checkmark"></span>
+                            <span class="option-text">Any Duration</span>
+                        </label>
+                        <label class="filter-option">
+                            <input type="checkbox" value="short" onchange="filterQuizzes()" name="duration">
+                            <span class="checkmark"></span>
+                            <span class="option-text">Short (< 10 min)</span>
+                        </label>
+                        <label class="filter-option">
+                            <input type="checkbox" value="medium" onchange="filterQuizzes()" name="duration">
+                            <span class="checkmark"></span>
+                            <span class="option-text">Medium (10-20 min)</span>
+                        </label>
+                        <label class="filter-option">
+                            <input type="checkbox" value="long" onchange="filterQuizzes()" name="duration">
+                            <span class="checkmark"></span>
+                            <span class="option-text">Long (> 20 min)</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="filter-group">
+                    <h3><i class="fas fa-star"></i> Rating</h3>
+                    <div class="filter-options">
+                        <label class="filter-option">
+                            <input type="checkbox" value="all" checked onchange="filterQuizzes()" name="rating" id="rating-all">
+                            <span class="checkmark"></span>
+                            <span class="option-text">All Ratings</span>
+                        </label>
+                        <label class="filter-option">
+                            <input type="checkbox" value="5" onchange="filterQuizzes()" name="rating">
+                            <span class="checkmark"></span>
+                            <span class="option-text">5 Stars</span>
+                        </label>
+                        <label class="filter-option">
+                            <input type="checkbox" value="4" onchange="filterQuizzes()" name="rating">
+                            <span class="checkmark"></span>
+                            <span class="option-text">4+ Stars</span>
+                        </label>
+                        <label class="filter-option">
+                            <input type="checkbox" value="3" onchange="filterQuizzes()" name="rating">
+                            <span class="checkmark"></span>
+                            <span class="option-text">3+ Stars</span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <button class="reset-filters" onclick="resetFilters()"><i class="fas fa-undo"></i> Reset Filters</button>
+        </section>
+
+        <!-- Quiz Cards Section -->
+        <section class="quiz-cards-section">
+            <div class="section-header">
+                <h2 class="section-title"><i class="fas fa-list-alt"></i> Available Quizzes</h2>
+                <div class="header-controls">
+                    <div class="sort-container">
+                        <label for="sortSelect">Sort by:</label>
+                        <select id="sortSelect" onchange="sortQuizzes()">
+                            <option value="name">Name</option>
+                            <option value="difficulty">Difficulty</option>
+                            <option value="duration">Duration</option>
+                            <option value="rating">Rating</option>
+                            <option value="popularity">Popularity</option>
+                        </select>
+                    </div>
+                    <p class="results-count"><i class="fas fa-list"></i> <span id="quizCount">8</span> quizzes found</p>
+                </div>
+            </div>
+
+            <div class="quiz-cards-container" id="quizContainer">
+                <!-- C++ Basic Quiz -->
+                <article class="quiz-card" data-language="cpp" data-difficulty="beginner" data-duration="medium" data-rating="5" data-popularity="95">
+                    <div class="quiz-card-header">
+                        <div class="quiz-badges">
+                            <span class="badge language-cpp"><i class="fab fa-cuttlefish"></i> C++</span>
+                            <span class="badge difficulty-beginner"><i class="fas fa-seedling"></i> Beginner</span>
+                        </div>
+                        <h3 class="quiz-card-title">C++ Programming Basics</h3>
+                        <div class="quiz-rating">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <span class="rating-text">(4.9/5 - 1,234 reviews)</span>
+                        </div>
+                    </div>
+                    <div class="quiz-card-content">
+                        <p class="quiz-card-description">Test your knowledge of C++ fundamentals including variables, loops, and basic syntax. Perfect for beginners starting their programming journey.</p>
+                        <div class="quiz-tags">
+                            <span class="quiz-tag">Variables</span>
+                            <span class="quiz-tag">Loops</span>
+                            <span class="quiz-tag">Functions</span>
+                            <span class="quiz-tag">Arrays</span>
+                        </div>
+                        <div class="quiz-progress">
+                            <div class="quiz-progress-bar" style="width: 0%"></div>
+                        </div>
+                        <div class="quiz-meta">
+                            <div class="meta-item"><i class="fas fa-question-circle"></i> 20 Questions</div>
+                            <div class="meta-item"><i class="fas fa-clock"></i> 15 Minutes</div>
+                            <div class="meta-item"><i class="fas fa-users"></i> 2,456 taken</div>
+                        </div>
+                    </div>
+                    <div class="quiz-card-footer">
+                        <a href="./content/quizzes/C++_quiz.html" class="start-quiz-btn"><i class="fas fa-play-circle"></i> Start Quiz</a>
+                        <div class="completion-badge">
+                            <i class="fas fa-medal"></i>
+                            <span>Certificate</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Java Basic Quiz -->
+                <article class="quiz-card" data-language="java" data-difficulty="beginner" data-duration="medium" data-rating="4" data-popularity="88">
+                    <div class="quiz-card-header">
+                        <div class="quiz-badges">
+                            <span class="badge language-java"><i class="fab fa-java"></i> Java</span>
+                            <span class="badge difficulty-beginner"><i class="fas fa-seedling"></i> Beginner</span>
+                        </div>
+                        <h3 class="quiz-card-title">Java Programming Fundamentals</h3>
+                        <div class="quiz-rating">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                            <span class="rating-text">(4.7/5 - 987 reviews)</span>
+                        </div>
+                    </div>
+                    <div class="quiz-card-content">
+                        <p class="quiz-card-description">Learn the basics of Java programming with questions on classes, objects, and core concepts. Build a solid foundation in OOP.</p>
+                        <div class="quiz-tags">
+                            <span class="quiz-tag">Classes</span>
+                            <span class="quiz-tag">Objects</span>
+                            <span class="quiz-tag">Inheritance</span>
+                            <span class="quiz-tag">Methods</span>
+                        </div>
+                        <div class="quiz-progress">
+                            <div class="quiz-progress-bar" style="width: 0%"></div>
+                        </div>
+                        <div class="quiz-meta">
+                            <div class="meta-item"><i class="fas fa-question-circle"></i> 15 Questions</div>
+                            <div class="meta-item"><i class="fas fa-clock"></i> 12 Minutes</div>
+                            <div class="meta-item"><i class="fas fa-users"></i> 1,876 taken</div>
+                        </div>
+                    </div>
+                    <div class="quiz-card-footer">
+                        <a href="./quizzes-home.html" class="start-quiz-btn"><i class="fas fa-play-circle"></i> Start Quiz</a>
+                        <div class="completion-badge">
+                            <i class="fas fa-medal"></i>
+                            <span>Certificate</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Python Basic Quiz -->
+                <article class="quiz-card" data-language="python" data-difficulty="beginner" data-duration="short" data-rating="5" data-popularity="92">
+                    <div class="quiz-card-header">
+                        <div class="quiz-badges">
+                            <span class="badge language-python"><i class="fab fa-python"></i> Python</span>
+                            <span class="badge difficulty-beginner"><i class="fas fa-seedling"></i> Beginner</span>
+                        </div>
+                        <h3 class="quiz-card-title">Python for Beginners</h3>
+                        <div class="quiz-rating">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <span class="rating-text">(4.8/5 - 2,156 reviews)</span>
+                        </div>
+                    </div>
+                    <div class="quiz-card-content">
+                        <p class="quiz-card-description">Start your Python journey with this quiz covering basic syntax, data types, and simple functions. Perfect for absolute beginners.</p>
+                        <div class="quiz-tags">
+                            <span class="quiz-tag">Syntax</span>
+                            <span class="quiz-tag">Data Types</span>
+                            <span class="quiz-tag">Functions</span>
+                            <span class="quiz-tag">Lists</span>
+                        </div>
+                        <div class="quiz-progress">
+                            <div class="quiz-progress-bar" style="width: 0%"></div>
+                        </div>
+                        <div class="quiz-meta">
+                            <div class="meta-item"><i class="fas fa-question-circle"></i> 10 Questions</div>
+                            <div class="meta-item"><i class="fas fa-clock"></i> 8 Minutes</div>
+                            <div class="meta-item"><i class="fas fa-users"></i> 3,245 taken</div>
+                        </div>
+                    </div>
+                    <div class="quiz-card-footer">
+                        <a href="./content/quizzes/Python_quiz.html" class="start-quiz-btn"><i class="fas fa-play-circle"></i> Start Quiz</a>
+                        <div class="completion-badge">
+                            <i class="fas fa-medal"></i>
+                            <span>Certificate</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- JavaScript Intermediate Quiz -->
+                <article class="quiz-card" data-language="javascript" data-difficulty="intermediate" data-duration="medium" data-rating="4" data-popularity="85">
+                    <div class="quiz-card-header">
+                        <div class="quiz-badges">
+                            <span class="badge language-javascript"><i class="fab fa-js-square"></i> JavaScript</span>
+                            <span class="badge difficulty-intermediate"><i class="fas fa-chart-line"></i> Intermediate</span>
+                        </div>
+                        <h3 class="quiz-card-title">JavaScript DOM Manipulation</h3>
+                        <div class="quiz-rating">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                            <span class="rating-text">(4.6/5 - 756 reviews)</span>
+                        </div>
+                    </div>
+                    <div class="quiz-card-content">
+                        <p class="quiz-card-description">Test your knowledge of JavaScript DOM manipulation, events, and modern ES6 features. Take your JS skills to the next level.</p>
+                        <div class="quiz-tags">
+                            <span class="quiz-tag">DOM</span>
+                            <span class="quiz-tag">Events</span>
+                            <span class="quiz-tag">ES6</span>
+                            <span class="quiz-tag">Async</span>
+                        </div>
+                        <div class="quiz-progress">
+                            <div class="quiz-progress-bar" style="width: 0%"></div>
+                        </div>
+                        <div class="quiz-meta">
+                            <div class="meta-item"><i class="fas fa-question-circle"></i> 18 Questions</div>
+                            <div class="meta-item"><i class="fas fa-clock"></i> 15 Minutes</div>
+                            <div class="meta-item"><i class="fas fa-users"></i> 1,432 taken</div>
+                        </div>
+                    </div>
+                    <div class="quiz-card-footer">
+                        <a href="./content/quizzes/Javascript_quiz.html" class="start-quiz-btn"><i class="fas fa-play-circle"></i> Start Quiz</a>
+                        <div class="completion-badge">
+                            <i class="fas fa-medal"></i>
+                            <span>Certificate</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- C++ Advanced Quiz -->
+                <article class="quiz-card" data-language="cpp" data-difficulty="advanced" data-duration="long" data-rating="5" data-popularity="78">
+                    <div class="quiz-card-header">
+                        <div class="quiz-badges">
+                            <span class="badge language-cpp"><i class="fab fa-cuttlefish"></i> C++</span>
+                            <span class="badge difficulty-advanced"><i class="fas fa-rocket"></i> Advanced</span>
+                        </div>
+                        <h3 class="quiz-card-title">C++ Advanced Concepts</h3>
+                        <div class="quiz-rating">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <span class="rating-text">(4.9/5 - 432 reviews)</span>
+                        </div>
+                    </div>
+                    <div class="quiz-card-content">
+                        <p class="quiz-card-description">Challenge yourself with advanced C++ topics including templates, STL, and memory management. For experienced programmers.</p>
+                        <div class="quiz-tags">
+                            <span class="quiz-tag">Templates</span>
+                            <span class="quiz-tag">STL</span>
+                            <span class="quiz-tag">Memory</span>
+                            <span class="quiz-tag">Pointers</span>
+                        </div>
+                        <div class="quiz-progress">
+                            <div class="quiz-progress-bar" style="width: 0%"></div>
+                        </div>
+                        <div class="quiz-meta">
+                            <div class="meta-item"><i class="fas fa-question-circle"></i> 25 Questions</div>
+                            <div class="meta-item"><i class="fas fa-clock"></i> 30 Minutes</div>
+                            <div class="meta-item"><i class="fas fa-users"></i> 876 taken</div>
+                        </div>
+                    </div>
+                    <div class="quiz-card-footer">
+                        <a href="./quizzes-home.html" class="start-quiz-btn"><i class="fas fa-play-circle"></i> Start Quiz</a>
+                        <div class="completion-badge">
+                            <i class="fas fa-medal"></i>
+                            <span>Certificate</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Python Data Science Quiz -->
+                <article class="quiz-card" data-language="python" data-difficulty="advanced" data-duration="long" data-rating="4" data-popularity="82">
+                    <div class="quiz-card-header">
+                        <div class="quiz-badges">
+                            <span class="badge language-python"><i class="fab fa-python"></i> Python</span>
+                            <span class="badge difficulty-advanced"><i class="fas fa-rocket"></i> Advanced</span>
+                        </div>
+                        <h3 class="quiz-card-title">Python for Data Science</h3>
+                        <div class="quiz-rating">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                            <span class="rating-text">(4.7/5 - 654 reviews)</span>
+                        </div>
+                    </div>
+                    <div class="quiz-card-content">
+                        <p class="quiz-card-description">Test your knowledge of Python libraries for data science including NumPy, Pandas, and Matplotlib. Perfect for data enthusiasts.</p>
+                        <div class="quiz-tags">
+                            <span class="quiz-tag">NumPy</span>
+                            <span class="quiz-tag">Pandas</span>
+                            <span class="quiz-tag">Matplotlib</span>
+                            <span class="quiz-tag">Data Analysis</span>
+                        </div>
+                        <div class="quiz-progress">
+                            <div class="quiz-progress-bar" style="width: 0%"></div>
+                        </div>
+                        <div class="quiz-meta">
+                            <div class="meta-item"><i class="fas fa-question-circle"></i> 22 Questions</div>
+                            <div class="meta-item"><i class="fas fa-clock"></i> 25 Minutes</div>
+                            <div class="meta-item"><i class="fas fa-users"></i> 1,234 taken</div>
+                        </div>
+                    </div>
+                    <div class="quiz-card-footer">
+                        <a href="./quizzes-home.html" class="start-quiz-btn"><i class="fas fa-play-circle"></i> Start Quiz</a>
+                        <div class="completion-badge">
+                            <i class="fas fa-medal"></i>
+                            <span>Certificate</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- HTML/CSS Quiz -->
+                <article class="quiz-card" data-language="html" data-difficulty="beginner" data-duration="short" data-rating="4" data-popularity="90">
+                    <div class="quiz-card-header">
+                        <div class="quiz-badges">
+                            <span class="badge language-html"><i class="fab fa-html5"></i> HTML/CSS</span>
+                            <span class="badge difficulty-beginner"><i class="fas fa-seedling"></i> Beginner</span>
+                        </div>
+                        <h3 class="quiz-card-title">Web Development Basics</h3>
+                        <div class="quiz-rating">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                            <span class="rating-text">(4.5/5 - 1,876 reviews)</span>
+                        </div>
+                    </div>
+                    <div class="quiz-card-content">
+                        <p class="quiz-card-description">Learn the fundamentals of web development with HTML structure and CSS styling. Perfect for aspiring web developers.</p>
+                        <div class="quiz-tags">
+                            <span class="quiz-tag">HTML Tags</span>
+                            <span class="quiz-tag">CSS Selectors</span>
+                            <span class="quiz-tag">Layout</span>
+                            <span class="quiz-tag">Responsive</span>
+                        </div>
+                        <div class="quiz-progress">
+                            <div class="quiz-progress-bar" style="width: 0%"></div>
+                        </div>
+                        <div class="quiz-meta">
+                            <div class="meta-item"><i class="fas fa-question-circle"></i> 12 Questions</div>
+                            <div class="meta-item"><i class="fas fa-clock"></i> 10 Minutes</div>
+                            <div class="meta-item"><i class="fas fa-users"></i> 2,987 taken</div>
+                        </div>
+                    </div>
+                    <div class="quiz-card-footer">
+                        <a href="./quizzes-home.html" class="start-quiz-btn"><i class="fas fa-play-circle"></i> Start Quiz</a>
+                        <div class="completion-badge">
+                            <i class="fas fa-medal"></i>
+                            <span>Certificate</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Java Advanced Quiz -->
+                <article class="quiz-card" data-language="java" data-difficulty="intermediate" data-duration="long" data-rating="4" data-popularity="75">
+                    <div class="quiz-card-header">
+                        <div class="quiz-badges">
+                            <span class="badge language-java"><i class="fab fa-java"></i> Java</span>
+                            <span class="badge difficulty-intermediate"><i class="fas fa-chart-line"></i> Intermediate</span>
+                        </div>
+                        <h3 class="quiz-card-title">Java Spring Framework</h3>
+                        <div class="quiz-rating">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                            <span class="rating-text">(4.4/5 - 543 reviews)</span>
+                        </div>
+                    </div>
+                    <div class="quiz-card-content">
+                        <p class="quiz-card-description">Dive deep into Java Spring Framework concepts including dependency injection, MVC, and enterprise application development.</p>
+                        <div class="quiz-tags">
+                            <span class="quiz-tag">Spring Boot</span>
+                            <span class="quiz-tag">MVC</span>
+                            <span class="quiz-tag">REST API</span>
+                            <span class="quiz-tag">JPA</span>
+                        </div>
+                        <div class="quiz-progress">
+                            <div class="quiz-progress-bar" style="width: 0%"></div>
+                        </div>
+                        <div class="quiz-meta">
+                            <div class="meta-item"><i class="fas fa-question-circle"></i> 20 Questions</div>
+                            <div class="meta-item"><i class="fas fa-clock"></i> 25 Minutes</div>
+                            <div class="meta-item"><i class="fas fa-users"></i> 765 taken</div>
+                        </div>
+                    </div>
+                    <div class="quiz-card-footer">
+                        <a href="./quizzes-home.html" class="start-quiz-btn"><i class="fas fa-play-circle"></i> Start Quiz</a>
+                        <div class="completion-badge">
+                            <i class="fas fa-medal"></i>
+                            <span>Certificate</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+
+            <!-- Pagination -->
+            <div class="pagination" id="pagination">
+                <button class="pagination-btn" id="prevBtn" onclick="changePage(-1)" disabled>
+                    <i class="fas fa-chevron-left"></i> Previous
+                </button>
+                <span class="pagination-info" id="pageInfo">Page 1 of 1</span>
+                <button class="pagination-btn" id="nextBtn" onclick="changePage(1)" disabled>
+                    Next <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+
+            <!-- No Results Message -->
+            <div class="no-results-message" id="noResults" style="display: none;">
+                <i class="fas fa-search"></i>
+                <h3>No quizzes found</h3>
+                <p>Try adjusting your filters or search criteria</p>
+                <button onclick="resetFilters()"><i class="fas fa-undo"></i> Reset Filters</button>
+            </div>
+        </section>
+
+        <!-- Popular Quizzes Section -->
+        <section class="popular-quizzes-section">
+            <h2 class="section-title"><i class="fas fa-fire"></i> Most Popular Quizzes</h2>
+            <div class="popular-quiz-list">
+                <div class="popular-quiz-item">
+                    <div class="popular-quiz-icon">
+                        <i class="fab fa-python"></i>
+                    </div>
+                    <div class="popular-quiz-info">
+                        <h4>Python for Beginners</h4>
+                        <p>3,245 students completed</p>
+                    </div>
+                    <div class="popular-quiz-rating">
+                        <i class="fas fa-star"></i>
+                        <span>4.8</span>
+                    </div>
+                </div>
+                <div class="popular-quiz-item">
+                    <div class="popular-quiz-icon">
+                        <i class="fab fa-js-square"></i>
+                    </div>
+                    <div class="popular-quiz-info">
+                        <h4>JavaScript DOM</h4>
+                        <p>2,456 students completed</p>
+                    </div>
+                    <div class="popular-quiz-rating">
+                        <i class="fas fa-star"></i>
+                        <span>4.6</span>
+                    </div>
+                </div>
+                <div class="popular-quiz-item">
+                    <div class="popular-quiz-icon">
+                        <i class="fab fa-html5"></i>
+                    </div>
+                    <div class="popular-quiz-info">
+                        <h4>Web Development Basics</h4>
+                        <p>2,987 students completed</p>
+                    </div>
+                    <div class="popular-quiz-rating">
+                        <i class="fas fa-star"></i>
+                        <span>4.5</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="item">
+            <img src="../assets/images/home-images/logo.png" alt="EduZone Logo">
+            <p>EduZone is an innovative learning<br> platform that provides courses in various <br> fields with continuous assessment and<br> personalized progress tracking. It<br> creates a dynamic and engaging<br> educational environment.</p>
+            <ul class="social-icons">
+                <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                <li><a href="#"><i class="fab fa-facebook"></i></a></li>
+                <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
+                <li><a href="#"><i class="fab fa-x-twitter"></i></a></li>
+                <li><a href="#"><i class="fab fa-google"></i></a></li>
+            </ul>
+        </div>
+        <div class="item">
+            <h3>EduZone</h3>
+            <ol>
+                <li><a href="./support.html">About Us</a></li>
+                <li><a href="./support.html">Services</a></li>
+                <li><a href="./support.html">Community</a></li>
+                <li><a href="./support.html">Todo list</a></li>
+            </ol>
+        </div>
+        <div class="item">
+            <h3>Support</h3>
+            <ol>
+                <li><a href="./support.html">Help</a></li>
+                <li><a href="./support.html">Tweet @us</a></li>
+                <li><a href="./support.html">Chat bot</a></li>
+                <li><a href="./support.html">Feedback</a></li>
+            </ol>
+        </div>
+        <div class="item">
+            <h3>Links</h3>
+            <ol>
+                <li><a href="./courses-home.html">Courses</a></li>
+                <li><a href="./quizzes-home.html">Quizzes</a></li>
+                <li><a href="./support.html">Support</a></li>
+            </ol>
+        </div>
+        <div class="item">
+            <h3>Contact us</h3>
+            <a href="mailto:support@mail.com"><i class="fas fa-envelope"></i> support@mail.com</a>
+        </div>
+    </footer>
+
+    <div class="copyright">
+        <div class="info">
+            Copyright © 2025 by EduZone - All rights reserved
+        </div>
+        <div class="info">
+            <a href="#">Privacy policy</a>
+            <a href="#">Terms of use</a>
+            <a href="#">Legal</a>
+            <a href="#">Site map</a>
+        </div>
+    </div>
+
+    <!-- Footer for media query -->
+    <div class="footer">
+        <div class="info">
+            <h2>Follow us on social media</h2>
+            <ul class="social-icons">
+                <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                <li><a href="#"><i class="fab fa-facebook"></i></a></li>
+                <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
+                <li><a href="#"><i class="fab fa-x-twitter"></i></a></li>
+                <li><a href="#"><i class="fab fa-google"></i></a></li>
+            </ul>
+        </div>
+
+        <div class="item">
+            <h3 class="footer-btn">EduZone <i class="fa-solid fa-arrow-down"></i></h3>
+            <ol>
+                <li><a href="./support.html">About Us</a></li>
+                <li><a href="./support.html">Services</a></li>
+                <li><a href="./home.html">Community</a></li>
+                <li><a href="./support.html">Todo list</a></li>
+            </ol>
+        </div>
+
+        <div class="item">
+            <h3 class="footer-btn">Support <i class="fa-solid fa-arrow-down"></i></h3>
+            <ol>
+                <li><a href="./support.html">Help</a></li>
+                <li><a href="./support.html">Tweet @us</a></li>
+                <li><a href="./support.html">Chat bot</a></li>
+                <li><a href="./support.html">Feedback</a></li>
+            </ol>
+        </div>
+
+        <div class="item">
+            <h3 class="footer-btn">Links <i class="fa-solid fa-arrow-down"></i></h3>
+            <ol>
+                <li><a href="./courses-home.html">Courses</a></li>
+                <li><a href="./quizzes-home.html">Quizzes</a></li>
+                <li><a href="./sign-up.html">Support</a></li>
+            </ol>
+        </div>
+
+        <div class="item">
+            <h3 class="footer-btn">Contact us <i class="fa-solid fa-arrow-down"></i></h3>
+            <ol>
+                <li><a href="mailto:support@mail.com"><i class="fas fa-envelope" style="color: #0559CF;"></i> support@mail.com</a></li>
+            </ol>
+        </div>
+        <h4>Copyright © 2025 by EduZone - All rights reserved</h4>
+    </div>
+
+    <!-- Scripts -->
+    <script src="../scripts/navbar-menu.js"></script>
+    <script src="../scripts/preloader.js"></script>
+    <script>
+        // Quiz filtering and sorting functionality
+        function filterQuizzes() {
+            const searchTerm = document.getElementById('quizSearch').value.toLowerCase();
+            const languageFilters = Array.from(document.querySelectorAll('input[name="language"]:checked')).map(cb => cb.value);
+            const difficultyFilters = Array.from(document.querySelectorAll('input[name="difficulty"]:checked')).map(cb => cb.value);
+            const durationFilters = Array.from(document.querySelectorAll('input[name="duration"]:checked')).map(cb => cb.value);
+            const ratingFilters = Array.from(document.querySelectorAll('input[name="rating"]:checked')).map(cb => cb.value);
+
+            const quizCards = document.querySelectorAll('.quiz-card');
+            let visibleCount = 0;
+
+            quizCards.forEach(card => {
+                const title = card.querySelector('.quiz-card-title').textContent.toLowerCase();
+                const description = card.querySelector('.quiz-card-description').textContent.toLowerCase();
+                const language = card.dataset.language;
+                const difficulty = card.dataset.difficulty;
+                const duration = card.dataset.duration;
+                const rating = card.dataset.rating;
+
+                const matchesSearch = title.includes(searchTerm) || description.includes(searchTerm);
+                const matchesLanguage = languageFilters.includes('all') || languageFilters.includes(language);
+                const matchesDifficulty = difficultyFilters.includes('all') || difficultyFilters.includes(difficulty);
+                const matchesDuration = durationFilters.includes('all') || durationFilters.includes(duration);
+                const matchesRating = ratingFilters.includes('all') || ratingFilters.some(r => parseInt(rating) >= parseInt(r));
+
+                if (matchesSearch && matchesLanguage && matchesDifficulty && matchesDuration && matchesRating) {
+                    card.style.display = 'flex';
+                    visibleCount++;
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+
+            document.getElementById('quizCount').textContent = visibleCount;
+            document.getElementById('noResults').style.display = visibleCount === 0 ? 'flex' : 'none';
+        }
+
+        function resetFilters() {
+            document.getElementById('quizSearch').value = '';
+            document.querySelectorAll('input[type="checkbox"]').forEach(cb => {
+                cb.checked = cb.value === 'all';
+            });
+            document.getElementById('sortSelect').value = 'name';
+            filterQuizzes();
+        }
+
+        function sortQuizzes() {
+            const sortBy = document.getElementById('sortSelect').value;
+            const container = document.getElementById('quizContainer');
+            const cards = Array.from(container.querySelectorAll('.quiz-card'));
+
+            cards.sort((a, b) => {
+                switch (sortBy) {
+                    case 'name':
+                        return a.querySelector('.quiz-card-title').textContent.localeCompare(b.querySelector('.quiz-card-title').textContent);
+                    case 'difficulty':
+                        const diffOrder = {
+                            'beginner': 1,
+                            'intermediate': 2,
+                            'advanced': 3
+                        };
+                        return diffOrder[a.dataset.difficulty] - diffOrder[b.dataset.difficulty];
+                    case 'duration':
+                        const durOrder = {
+                            'short': 1,
+                            'medium': 2,
+                            'long': 3
+                        };
+                        return durOrder[a.dataset.duration] - durOrder[b.dataset.duration];
+                    case 'rating':
+                        return parseInt(b.dataset.rating) - parseInt(a.dataset.rating);
+                    case 'popularity':
+                        return parseInt(b.dataset.popularity) - parseInt(a.dataset.popularity);
+                    default:
+                        return 0;
+                }
+            });
+
+            cards.forEach(card => container.appendChild(card));
+        }
+
+        // Initialize filters
+        document.addEventListener('DOMContentLoaded', () => {
+            filterQuizzes();
+        });
+    </script>
+    <script src="../scripts/Login_button.js"></script>
+</body>
+
+</html>
